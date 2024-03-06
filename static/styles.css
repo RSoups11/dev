@@ -78,4 +78,17 @@ body {
 #colonne-droite {
   color: white;
   margin-left: 10px;
+}
+
+.categorie-gauche {
+  text-align: right;
+}
+
+.categorie-droite {
+  text-align: left;
+}
+
+.texte-gauche {
+  text-align: right;
+  color: white;
 }/*# sourceMappingURL=styles.css.map */
