@@ -1,12 +1,18 @@
 body {
   background-color: black;
-  }
+}
 
-#en-tete {
-  background-color: #831010;
-
+#container {
+  width: 500px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #en-tete h1 {
-  color: white;
+  color: #564d4d;
 }
+
+#nom {
+  color: white;
+}/*# sourceMappingURL=styles.css.map */

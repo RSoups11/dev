@@ -1,0 +1,22 @@
+$bg-color : black;
+$gray_txt : #564d4d;
+$white_txt : white;
+
+body {
+  background-color: $bg-color;
+  }
+
+#container {
+  width: 500px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#en-tete h1 {
+  color : $gray_txt;
+}
+
+#nom {
+  color : $white_txt;
+}
