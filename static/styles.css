@@ -1,18 +1,81 @@
+@charset "UTF-8";
 body {
   background-color: black;
 }
 
-#container {
-  width: 500px;
-  height: 100px;
+#container1 {
+  display: flex;
+  align-items: center;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
+  border-bottom: 2px solid #564d4d;
 }
 
-#en-tete h1 {
+#en-tete {
+  flex: 1;
+}
+
+#top10 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#top10 img {
+  width: 5%;
+  height: auto;
+}
+
+#top10 p {
+  margin-left: 5px;
+  color: #60a471;
+  font-family: Helvetica;
+  font-style: bold;
+}
+
+#en-tete h1, p {
   color: #564d4d;
+  font-family: Helvetica;
+}
+
+#pdp {
+  width: 30%;
+}
+
+.disponibilite {
+  color: white;
+  font-family: Helvetica;
 }
 
 #nom {
   color: white;
+}
+
+.grisé {
+  color: #564d4d;
+}
+
+#container2 {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid #564d4d;
+}
+
+#colonne-gauche, #colonne-droite {
+  flex: 1;
+  padding: 20px;
+}
+
+#colonne-gauche {
+  color: white;
+  margin-right: 10px;
+}
+
+#colonne-droite {
+  color: white;
+  margin-left: 10px;
 }/*# sourceMappingURL=styles.css.map */

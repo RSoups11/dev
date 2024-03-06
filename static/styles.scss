@@ -1,22 +1,91 @@
 $bg-color : black;
 $gray_txt : #564d4d;
 $white_txt : white;
+$font : Helvetica;
+$ligne : 2px solid #564d4d;
 
 body {
   background-color: $bg-color;
   }
 
-#container {
-  width: 500px;
-  height: 100px;
+// Style pour le container1 : 
+
+#container1 {
+  display: flex;
+  align-items: center;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
+  border-bottom: $ligne;
 }
 
-#en-tete h1 {
+#en-tete {
+  flex:1; // Prend tout l'espace disponible du div
+}
+
+#top10 {
+  display : flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#top10 img {
+  width: 5%;
+  height: auto;
+}
+
+#top10 p {
+  margin-left: 5px; 
+  color : #60a471;
+  font-family: $font;
+  font-style: bold;
+}
+
+#en-tete h1, p {
   color : $gray_txt;
+  font-family: $font;
+}
+
+#pdp {
+  width: 30%;
+}
+
+.disponibilite {
+  color : $white_txt;
+  font-family: $font;
 }
 
 #nom {
   color : $white_txt;
+}
+
+.grisé {
+  color : $gray_txt;
+}
+
+// Style pour le container2 :
+
+#container2 {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: $ligne;
+}
+
+#colonne-gauche, #colonne-droite {
+  flex: 1; 
+  padding: 20px;
+}
+
+
+#colonne-gauche {
+  color: $white_txt; 
+  margin-right: 10px; 
+}
+
+#colonne-droite {
+  color: $white_txt; 
+  margin-left: 10px; 
 }
