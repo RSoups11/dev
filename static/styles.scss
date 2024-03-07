@@ -1,22 +1,28 @@
+// Variables réutilisables
 $bg-color : black;
 $gray_txt : #564d4d;
 $white_txt : white;
 $font : Helvetica;
 $ligne : 2px solid #564d4d;
 
-body {
-  background-color: $bg-color;
-  }
-
-// Style pour le container1 : 
-
-#container1 {
+// Style pour les containers : 
+@mixin container {
   display: flex;
   align-items: center;
   width: 40%;
   margin-left: auto;
   margin-right: auto;
   border-bottom: $ligne;
+}
+
+
+body {
+  background-color: $bg-color;
+  }
+
+
+#container1 {
+  @include container;
 }
 
 #en-tete {
@@ -63,15 +69,9 @@ body {
   color : $gray_txt;
 }
 
-// Style pour le container2 :
 
 #container2 {
-  display: flex;
-  align-items: center;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-  border-bottom: $ligne;
+  @include container;
 }
 
 #colonne-gauche, #colonne-droite {
@@ -101,4 +101,5 @@ body {
 .texte-gauche {
   text-align: right;
   color : $white_txt;
+  font-family: $font;
 }
