@@ -82,14 +82,50 @@ body {
 
 .categorie-gauche {
   text-align: right;
+  font-size: 25px;
 }
 
 .categorie-droite {
   text-align: left;
+  font-size: 25px;
 }
 
 .texte-gauche {
   text-align: right;
   color: white;
   font-family: Helvetica;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10%;
+}
+
+.texte-droite {
+  color: white;
+  font-family: Helvetica;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 15px;
+  font-family: Helvetica;
+  margin-bottom: 0;
+  margin-top: 5%;
+}
+
+h4 {
+  color: red;
+  font-size: 15px;
+  font-family: Helvetica;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.element {
+  margin-bottom: 10%;
+}
+
+.titre-gauche {
+  text-align: right;
+  margin-bottom: 0;
 }/*# sourceMappingURL=styles.css.map */
