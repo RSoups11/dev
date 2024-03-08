@@ -1,0 +1,248 @@
+@charset "UTF-8";
+body {
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+#container1 {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid orange;
+}
+
+#en-tete {
+  flex: 1;
+}
+
+#top10 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2%;
+}
+
+#top10 img {
+  width: 5%;
+}
+
+#top10 p {
+  margin-left: 5px;
+  color: #60a471;
+  font-family: Helvetica;
+  font-style: bold;
+  margin-bottom: 0;
+}
+
+#en-tete h1 {
+  color: yellow;
+  font-family: Helvetica;
+  margin-bottom: 0;
+}
+
+#en-tete, p {
+  color: yellow;
+  font-family: Helvetica;
+  margin-top: 0;
+}
+
+#pdp {
+  width: 25%;
+}
+
+.disponibilite {
+  color: pink;
+  font-family: Helvetica;
+  margin-bottom: 2%;
+}
+
+#nom {
+  color: pink;
+}
+
+.grisé {
+  color: yellow;
+}
+
+#container2 {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid orange;
+}
+
+#colonne-gauche, #colonne-droite {
+  flex: 1;
+  align-self: stretch;
+  padding: 20px;
+  padding-top: 0;
+}
+
+#colonne-gauche {
+  color: pink;
+  margin-right: 5%;
+  font-family: Lucida;
+}
+
+#colonne-droite {
+  color: pink;
+  margin-left: 5%;
+  font-family: Lucida;
+}
+
+.categorie-gauche {
+  text-align: right;
+  font-size: 25px;
+  margin-bottom: 2%;
+}
+
+.categorie-droite {
+  text-align: left;
+  font-size: 25px;
+  margin-bottom: 2%;
+}
+
+.texte-gauche {
+  text-align: right;
+  color: pink;
+  font-family: Helvetica;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10%;
+}
+
+.texte-droite {
+  color: pink;
+  font-family: Helvetica;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 15px;
+  font-family: Helvetica;
+  margin-bottom: 0;
+  margin-top: 5%;
+  display: inline-block;
+}
+
+h4 {
+  color: magenta;
+  font-size: 15px;
+  font-family: Helvetica;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.element {
+  margin-bottom: 0;
+}
+
+.titre-gauche {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.checked {
+  color: magenta;
+}
+
+.interet {
+  color: pink;
+  font-family: Helvetica;
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: 4%;
+  margin-top: 0;
+  margin-left: 55%;
+}
+
+.expertise {
+  color: pink;
+  font-family: Helvetica;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 4%;
+  margin-top: 0;
+  margin-left: 5%;
+}
+
+#esilien {
+  color: pink;
+  font-family: Helvetica;
+  font-size: 14px;
+  float: right;
+}
+
+ul {
+  padding-left: 0;
+}
+
+#container3 {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categorie-bas {
+  text-align: center;
+  font-size: 25px;
+  color: pink;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.texte-bas {
+  font-family: Helvetica;
+  color: magenta;
+  font-size: 14px;
+}
+
+.bloc {
+  margin-bottom: 13%;
+  margin-top: 0;
+}
+
+.button {
+  padding: 10px 20px;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Helvetica;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-lecture {
+  background-color: yellow;
+  font-family: Helvetica;
+}
+
+.button-lecture:hover {
+  background-color: pink;
+}
+
+.button-plus-infos {
+  background-color: red;
+  font-family: Helvetica;
+  margin-left: 1%;
+  color: pink;
+}
+
+.button-plus-infos:hover {
+  background-color: magenta;
+}
+
+.button-container {
+  margin-top: 2%;
+}/*# sourceMappingURL=funky.css.map */

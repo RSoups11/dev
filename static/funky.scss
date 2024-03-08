@@ -1,0 +1,272 @@
+// Variables réutilisables
+$bg-color : linear-gradient(#e66465, #9198e5);;
+$gray_txt : yellow;
+$white_txt : pink;
+$red_txt : magenta;
+$font : Helvetica;
+$ligne : 2px solid orange;
+$text-size : 14px;
+$titre-size : 25px;
+$h3-size : 15px;
+$titre-font : Lucida;
+
+// Style pour les containers : 
+
+@mixin container {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: $ligne;
+}
+
+
+body {
+  background: $bg-color;
+  }
+
+
+#container1 {
+  @include container;
+}
+
+#en-tete {
+  flex:1; // Prend tout l'espace disponible du div
+}
+
+#top10 {
+  display : flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2%;
+}
+
+#top10 img {
+  width: 5%;
+}
+
+#top10 p {
+  margin-left: 5px; 
+  color : #60a471;
+  font-family: $font;
+  font-style: bold;
+  margin-bottom: 0;
+}
+
+#en-tete h1 {
+  color : $gray_txt;
+  font-family: $font;
+  margin-bottom: 0;
+}
+
+#en-tete, p {
+  color : $gray_txt;
+  font-family: $font;
+  margin-top: 0;
+}
+
+#pdp {
+  width: 25%;
+}
+
+.disponibilite {
+  color : $white_txt;
+  font-family: $font;
+  margin-bottom: 2%;
+}
+
+#nom {
+  color : $white_txt;
+}
+
+.grisé {
+  color : $gray_txt;
+}
+
+
+#container2 {
+  @include container;
+}
+
+#colonne-gauche, #colonne-droite {
+  flex: 1;
+  align-self: stretch;
+  padding: 20px;
+  padding-top: 0;
+}
+
+
+#colonne-gauche {
+  color: $white_txt; 
+  margin-right: 5%; 
+  font-family: $titre-font;
+}
+
+#colonne-droite {
+  color: $white_txt; 
+  margin-left: 5%; 
+  font-family: $titre-font;
+}
+
+.categorie-gauche {
+  text-align: right;
+  font-size: $titre-size;
+  margin-bottom: 2%;
+}
+
+.categorie-droite {
+  text-align: left;
+  font-size: $titre-size;
+  margin-bottom: 2%;
+}
+
+@mixin texte-param {
+  color : $white_txt;
+  font-family: $font;
+  font-size: $text-size;
+}
+
+@mixin title {
+  font-size: $h3-size;
+  font-family: $font;
+}
+
+.texte-gauche {
+  text-align: right;
+  @include texte-param;
+  margin-top: 0;
+  margin-bottom: 10%;
+}
+
+.texte-droite {
+  @include texte-param;
+  margin-top: 0;
+}
+
+h3 {
+  @include title;
+  margin-bottom: 0;
+  margin-top: 5%;
+  display: inline-block;
+}
+
+h4 {
+  color : $red_txt;
+  @include title;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.element {
+  margin-bottom: 0;
+}
+
+.titre-gauche {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.checked {
+  color : $red_txt;
+}
+
+.interet {
+  @include texte-param;
+  text-align: right;
+  margin-bottom: 4%;
+  margin-top: 0;
+  margin-left: 55%;
+}
+
+.expertise {
+  @include texte-param;
+  text-align: left;
+  margin-bottom: 4%;
+  margin-top: 0;
+  margin-left: 5%
+}
+
+#esilien {
+  @include texte-param;
+  float : right;
+}
+
+ul {
+  padding-left: 0;
+}
+
+
+#container3 {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categorie-bas {
+  text-align: center;
+  font-size: $titre-size;
+  color : $white_txt;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.texte-bas {
+  font-family: $font;
+  color: $red_txt;
+  font-size: $text-size;
+
+}
+
+.bloc {
+  margin-bottom: 13%;
+  margin-top: 0;
+}
+
+
+
+
+
+
+.button {
+  padding: 10px 20px;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: $text-size;
+  font-family: $font;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.button-lecture {
+  background-color: yellow; 
+  font-family: $font;
+}
+
+.button-lecture:hover {
+  background-color: pink; 
+}
+
+
+.button-plus-infos {
+  background-color: red;
+  font-family: $font;
+  margin-left: 1%; 
+  color : $white_txt;
+}
+
+.button-plus-infos:hover {
+  background-color: magenta; 
+}
+
+.button-container {
+  margin-top: 2%;
+}
