@@ -10,7 +10,6 @@ $titre-size : 25px;
 $h3-size : 15px;
 $titre-font : Lucida;
 
-
 // Style pour les containers : 
 
 @mixin container {
@@ -40,6 +39,7 @@ body {
   display : flex;
   align-items: center;
   justify-content: flex-start;
+  margin-bottom: 2%;
 }
 
 #top10 img {
@@ -67,13 +67,13 @@ body {
 }
 
 #pdp {
-  width: 30%;
+  width: 25%;
 }
 
 .disponibilite {
   color : $white_txt;
   font-family: $font;
-  margin-bottom: 0;
+  margin-bottom: 2%;
 }
 
 #nom {
@@ -87,7 +87,6 @@ body {
 
 #container2 {
   @include container;
-  border-bottom: none;
 }
 
 #colonne-gauche, #colonne-droite {
@@ -202,7 +201,6 @@ ul {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: $ligne;
 }
 
 .categorie-bas {
@@ -214,11 +212,10 @@ ul {
 #contact {
   display: flex;
   align-items: center;
-  flex: 1;
+  justify-content: space-between;
 }
 
 .texte-bas {
-  margin-right: 15%;
   font-family: $font;
   color: $red_txt;
   font-size: $text-size;

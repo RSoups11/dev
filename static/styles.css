@@ -20,6 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-bottom: 2%;
 }
 
 #top10 img {
@@ -47,13 +48,13 @@ body {
 }
 
 #pdp {
-  width: 30%;
+  width: 25%;
 }
 
 .disponibilite {
   color: white;
   font-family: Helvetica;
-  margin-bottom: 0;
+  margin-bottom: 2%;
 }
 
 #nom {
@@ -71,7 +72,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   border-bottom: 2px solid #564d4d;
-  border-bottom: none;
 }
 
 #colonne-gauche, #colonne-droite {
@@ -185,7 +185,6 @@ ul {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
-  border-bottom: 2px solid #564d4d;
 }
 
 .categorie-bas {
@@ -197,11 +196,10 @@ ul {
 #contact {
   display: flex;
   align-items: center;
-  flex: 1;
+  justify-content: space-between;
 }
 
 .texte-bas {
-  margin-right: 15%;
   font-family: Helvetica;
   color: red;
   font-size: 14px;
