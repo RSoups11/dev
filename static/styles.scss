@@ -44,7 +44,6 @@ body {
 
 #top10 img {
   width: 5%;
-  height: auto;
 }
 
 #top10 p {
@@ -52,11 +51,19 @@ body {
   color : #60a471;
   font-family: $font;
   font-style: bold;
+  margin-bottom: 0;
 }
 
-#en-tete h1, p {
+#en-tete h1 {
   color : $gray_txt;
   font-family: $font;
+  margin-bottom: 0;
+}
+
+#en-tete, p {
+  color : $gray_txt;
+  font-family: $font;
+  margin-top: 0;
 }
 
 #pdp {
@@ -66,6 +73,7 @@ body {
 .disponibilite {
   color : $white_txt;
   font-family: $font;
+  margin-bottom: 0;
 }
 
 #nom {
@@ -83,31 +91,35 @@ body {
 }
 
 #colonne-gauche, #colonne-droite {
-  flex: 1; 
+  flex: 1;
+  align-self: stretch;
   padding: 20px;
+  padding-top: 0;
 }
 
 
 #colonne-gauche {
   color: $white_txt; 
-  margin-right: 10px; 
+  margin-right: 5%; 
   font-family: $titre-font;
 }
 
 #colonne-droite {
   color: $white_txt; 
-  margin-left: 10px; 
+  margin-left: 5%; 
   font-family: $titre-font;
 }
 
 .categorie-gauche {
   text-align: right;
   font-size: $titre-size;
+  margin-bottom: 2%;
 }
 
 .categorie-droite {
   text-align: left;
   font-size: $titre-size;
+  margin-bottom: 2%;
 }
 
 @mixin texte-param {
@@ -137,6 +149,7 @@ h3 {
   @include title;
   margin-bottom: 0;
   margin-top: 5%;
+  display: inline-block;
 }
 
 h4 {
@@ -147,7 +160,7 @@ h4 {
 }
 
 .element {
-  margin-bottom: 5%;
+  margin-bottom: 0;
 }
 
 .titre-gauche {
@@ -162,8 +175,17 @@ h4 {
 .interet {
   @include texte-param;
   text-align: right;
-  margin-bottom: 7%;
-  margin-top: 0
+  margin-bottom: 4%;
+  margin-top: 0;
+  margin-left: 55%;
+}
+
+.expertise {
+  @include texte-param;
+  text-align: left;
+  margin-bottom: 4%;
+  margin-top: 0;
+  margin-left: 5%
 }
 
 #esilien {
@@ -175,9 +197,6 @@ ul {
   padding-left: 0;
 }
 
-li {
-  margin-left: 60%;
-}
 
 #container3 {
   width: 40%;
@@ -207,5 +226,6 @@ li {
 }
 
 .bloc {
-  margin-bottom: 10%;
+  margin-bottom: 13%;
+  margin-top: 0;
 }
