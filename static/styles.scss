@@ -226,3 +226,47 @@ ul {
   margin-bottom: 13%;
   margin-top: 0;
 }
+
+
+
+
+
+
+.button {
+  padding: 10px 20px;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: $text-size;
+  font-family: $font;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.button-lecture {
+  background-color: $white_txt; 
+  font-family: $font;
+}
+
+.button-lecture:hover {
+  background-color: #555; 
+}
+
+
+.button-plus-infos {
+  background-color: #7f7f7f;
+  font-family: $font;
+  margin-left: 5px; 
+  color : $white_txt;
+}
+
+.button-plus-infos:hover {
+  background-color: #999; 
+}
+
+.button-container {
+  margin-top: 2%;
+}
