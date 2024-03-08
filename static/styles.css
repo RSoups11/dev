@@ -63,6 +63,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   border-bottom: 2px solid #564d4d;
+  border-bottom: none;
 }
 
 #colonne-gauche, #colonne-droite {
@@ -73,11 +74,13 @@ body {
 #colonne-gauche {
   color: white;
   margin-right: 10px;
+  font-family: Lucida;
 }
 
 #colonne-droite {
   color: white;
   margin-left: 10px;
+  font-family: Lucida;
 }
 
 .categorie-gauche {
@@ -122,10 +125,68 @@ h4 {
 }
 
 .element {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .titre-gauche {
   text-align: right;
   margin-bottom: 0;
+}
+
+.checked {
+  color: red;
+}
+
+.interet {
+  color: white;
+  font-family: Helvetica;
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: 7%;
+  margin-top: 0;
+}
+
+#esilien {
+  color: white;
+  font-family: Helvetica;
+  font-size: 14px;
+  float: right;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  margin-left: 60%;
+}
+
+#container3 {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid #564d4d;
+}
+
+.categorie-bas {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.texte-bas {
+  margin-right: 15%;
+  font-family: Helvetica;
+  color: red;
+  font-size: 14px;
+}
+
+.bloc {
+  margin-bottom: 10%;
 }/*# sourceMappingURL=styles.css.map */

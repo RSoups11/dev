@@ -8,6 +8,7 @@ $ligne : 2px solid #564d4d;
 $text-size : 14px;
 $titre-size : 25px;
 $h3-size : 15px;
+$titre-font : Lucida;
 
 
 // Style pour les containers : 
@@ -78,6 +79,7 @@ body {
 
 #container2 {
   @include container;
+  border-bottom: none;
 }
 
 #colonne-gauche, #colonne-droite {
@@ -89,11 +91,13 @@ body {
 #colonne-gauche {
   color: $white_txt; 
   margin-right: 10px; 
+  font-family: $titre-font;
 }
 
 #colonne-droite {
   color: $white_txt; 
   margin-left: 10px; 
+  font-family: $titre-font;
 }
 
 .categorie-gauche {
@@ -143,10 +147,65 @@ h4 {
 }
 
 .element {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .titre-gauche {
   text-align: right;
   margin-bottom: 0;
+}
+
+.checked {
+  color : $red_txt;
+}
+
+.interet {
+  @include texte-param;
+  text-align: right;
+  margin-bottom: 7%;
+  margin-top: 0
+}
+
+#esilien {
+  @include texte-param;
+  float : right;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  margin-left: 60%;
+}
+
+#container3 {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: $ligne;
+}
+
+.categorie-bas {
+  text-align: center;
+  font-size: $titre-size;
+  color : $white_txt;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.texte-bas {
+  margin-right: 15%;
+  font-family: $font;
+  color: $red_txt;
+  font-size: $text-size;
+
+}
+
+.bloc {
+  margin-bottom: 10%;
 }
