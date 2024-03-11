@@ -1,8 +1,8 @@
 // Variables réutilisables
 $bg-color : linear-gradient(#e66465, #9198e5);;
-$gray_txt : yellow;
-$white_txt : pink;
-$red_txt : magenta;
+$yellow_txt : yellow;
+$pink_txt : pink;
+$magenta_txt : magenta;
 $font : Helvetica;
 $ligne : 2px solid orange;
 $text-size : 14px;
@@ -48,20 +48,17 @@ body {
 
 #top10 p {
   margin-left: 5px; 
-  color : #60a471;
   font-family: $font;
   font-style: bold;
   margin-bottom: 0;
 }
 
 #en-tete h1 {
-  color : $gray_txt;
   font-family: $font;
   margin-bottom: 0;
 }
 
 #en-tete, p {
-  color : $gray_txt;
   font-family: $font;
   margin-top: 0;
 }
@@ -71,17 +68,17 @@ body {
 }
 
 .disponibilite {
-  color : $white_txt;
+  color : $pink_txt;
   font-family: $font;
   margin-bottom: 2%;
 }
 
 #nom {
-  color : $white_txt;
+  color : $pink_txt;
 }
 
 .grisé {
-  color : $gray_txt;
+  color : $yellow_txt;
 }
 
 
@@ -98,13 +95,11 @@ body {
 
 
 #colonne-gauche {
-  color: $white_txt; 
   margin-right: 5%; 
   font-family: $titre-font;
 }
 
 #colonne-droite {
-  color: $white_txt; 
   margin-left: 5%; 
   font-family: $titre-font;
 }
@@ -122,7 +117,6 @@ body {
 }
 
 @mixin texte-param {
-  color : $white_txt;
   font-family: $font;
   font-size: $text-size;
 }
@@ -152,7 +146,6 @@ h3 {
 }
 
 h4 {
-  color : $red_txt;
   @include title;
   margin-top: 0;
   margin-bottom: 0;
@@ -168,7 +161,7 @@ h4 {
 }
 
 .checked {
-  color : $red_txt;
+  color : $magenta_txt;
 }
 
 .interet {
@@ -206,7 +199,7 @@ ul {
 .categorie-bas {
   text-align: center;
   font-size: $titre-size;
-  color : $white_txt;
+  color : $pink_txt;
 }
 
 #contact {
@@ -217,7 +210,7 @@ ul {
 
 .texte-bas {
   font-family: $font;
-  color: $red_txt;
+  color: $magenta_txt;
   font-size: $text-size;
 
 }
@@ -257,10 +250,10 @@ ul {
 
 
 .button-plus-infos {
-  background-color: red;
+  background-color: magenta;
   font-family: $font;
   margin-left: 1%; 
-  color : $white_txt;
+  color : $pink_txt;
 }
 
 .button-plus-infos:hover {
