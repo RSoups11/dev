@@ -5,9 +5,6 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
 
     // récupère les textes pour mettre en rainbow color
     var rainbow = document.getElementsByClassName("rainbow");
-
-    
-
   
     lectureButton.addEventListener("click", function() { // check si le bouton de classe button-lecture est cliqué pour effectuer la fonction en argument
       if (song.paused) { // si il n'y a pas de musique lors de l'appuie alors on lance
@@ -54,4 +51,3 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
         });
     }
   });
-
