@@ -31,10 +31,6 @@ body {
   @include container;
 }
 
-#en-tete, #pdp {
-  flex : 1;
-}
-
 #top10 {
   display : flex;
   align-items: center;
