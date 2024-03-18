@@ -12,6 +12,10 @@ body {
   border-bottom: 2px solid #564d4d;
 }
 
+#en-tete, #pdp {
+  flex: 1;
+}
+
 #top10 {
   display: flex;
   align-items: center;
