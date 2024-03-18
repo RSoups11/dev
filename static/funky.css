@@ -6,9 +6,7 @@ body {
 #container1 {
   display: flex;
   align-items: center;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   border-bottom: 2px solid orange;
 }
 
@@ -24,31 +22,28 @@ body {
 }
 
 #top10 img {
-  width: 5%;
+  width: 100%;
 }
 
 #top10 p {
   margin-left: 5px;
-  color: #60a471;
   font-family: Helvetica;
   font-style: bold;
   margin-bottom: 0;
 }
 
 #en-tete h1 {
-  color: yellow;
   font-family: Helvetica;
   margin-bottom: 0;
 }
 
 #en-tete, p {
-  color: yellow;
   font-family: Helvetica;
   margin-top: 0;
 }
 
 #pdp {
-  width: 25%;
+  width: 100%;
 }
 
 .disponibilite {
@@ -68,9 +63,7 @@ body {
 #container2 {
   display: flex;
   align-items: center;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   border-bottom: 2px solid orange;
 }
 
@@ -82,13 +75,11 @@ body {
 }
 
 #colonne-gauche {
-  color: pink;
   margin-right: 5%;
   font-family: Lucida;
 }
 
 #colonne-droite {
-  color: pink;
   margin-left: 5%;
   font-family: Lucida;
 }
@@ -107,7 +98,6 @@ body {
 
 .texte-gauche {
   text-align: right;
-  color: pink;
   font-family: Helvetica;
   font-size: 14px;
   margin-top: 0;
@@ -115,7 +105,6 @@ body {
 }
 
 .texte-droite {
-  color: pink;
   font-family: Helvetica;
   font-size: 14px;
   margin-top: 0;
@@ -130,7 +119,6 @@ h3 {
 }
 
 h4 {
-  color: magenta;
   font-size: 15px;
   font-family: Helvetica;
   margin-top: 0;
@@ -151,7 +139,6 @@ h4 {
 }
 
 .interet {
-  color: pink;
   font-family: Helvetica;
   font-size: 14px;
   text-align: right;
@@ -161,7 +148,6 @@ h4 {
 }
 
 .expertise {
-  color: pink;
   font-family: Helvetica;
   font-size: 14px;
   text-align: left;
@@ -171,7 +157,6 @@ h4 {
 }
 
 #esilien {
-  color: pink;
   font-family: Helvetica;
   font-size: 14px;
   float: right;
@@ -233,7 +218,7 @@ ul {
 }
 
 .button-plus-infos {
-  background-color: red;
+  background-color: magenta;
   font-family: Helvetica;
   margin-left: 1%;
   color: pink;
