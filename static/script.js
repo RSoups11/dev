@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
         Array.from(elements).forEach((element) => { // crée un array a partir d'élément pour utiliser forEach avec une fonction fléchée
           element.innerHTML = element.innerText;    // la fonction fait pour chaque élément :
                                                     // enleve les spans en mettant dans le HTML le texte meme
-                                                    // !!! ducoup il n'y a plus dutout d'élément HTML (span par exemple) !!!
+                                                    // !!! ducoup il n'y a plus dutout d'élément HTML (span, br par exemple) !!!
         });
     }
   });
