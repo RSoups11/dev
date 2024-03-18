@@ -32,10 +32,6 @@ body {
   @include container;
 }
 
-#en-tete {
-  flex:1; // Prend tout l'espace disponible du div
-}
-
 #top10 {
   display : flex;
   align-items: center;

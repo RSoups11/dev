@@ -13,10 +13,6 @@ body {
   border-bottom: 2px solid orange;
 }
 
-#en-tete {
-  flex: 1;
-}
-
 #top10 {
   display: flex;
   align-items: center;
