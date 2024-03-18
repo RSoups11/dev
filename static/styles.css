@@ -12,7 +12,7 @@ body {
   border-bottom: 2px solid #564d4d;
 }
 
-#en-tete, #pdp {
+#en-tete {
   flex: 1;
 }
 
