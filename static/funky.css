@@ -34,6 +34,7 @@ body {
 #en-tete h1 {
   font-family: Helvetica;
   margin-bottom: 0;
+  color: pink;
 }
 
 #en-tete, p {
