@@ -87,12 +87,14 @@ body {
 
 #colonne-droite {
   color: white;
+  margin-left: 2%;
   font-family: Lucida;
 }
 
 .categorie-gauche {
   text-align: right;
   font-size: 25px;
+  margin-right: 2%;
   margin-bottom: 2%;
 }
 

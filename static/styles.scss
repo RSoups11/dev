@@ -102,12 +102,14 @@ body {
 
 #colonne-droite {
   color: $white_txt; 
+  margin-left: 2%;
   font-family: $titre-font;
 }
 
 .categorie-gauche {
   text-align: right;
   font-size: $titre-size;
+  margin-right: 2%;
   margin-bottom: 2%;
 }
 
