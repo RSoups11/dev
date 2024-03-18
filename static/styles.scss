@@ -15,7 +15,7 @@ $titre-font : Lucida;
 @mixin container {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 50%;
   border-bottom: $ligne;
 }
 

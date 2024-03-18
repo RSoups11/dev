@@ -6,7 +6,7 @@ body {
 #container1 {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 50%;
   border-bottom: 2px solid #564d4d;
 }
 
@@ -62,7 +62,7 @@ body {
 #container2 {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 50%;
   border-bottom: 2px solid #564d4d;
 }
 
