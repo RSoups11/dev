@@ -29,10 +29,14 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
         var couleurs = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3']; // tableau de couleur de l'arc en ciel
         var couleursIndex = 0; // l'indice de la couleur du tableau
   
-        for (var i = 0; i < elements.length; i++) { // pour chaque élément de la classe rainbow
-          var element = elements[i]; // récupère l'élément actuel
-          var text = element.innerText; // récupère le texte de l'élément 
-          var rainbowText = ''; // texte vide qui sera actualisé à chaque élément
+        Array.from(elements).forEach(element => {
+          // Stocker le HTML original dans un attribut data
+          if (!element.hasAttribute('data-original-html')) {
+              element.setAttribute('data-original-html', element.innerHTML);
+          }
+  
+          var text = element.innerText;
+          var rainbowText = '';
   
           for (var j = 0; j < text.length; j++) {
               rainbowText += '<span style="color:' + couleurs[couleursIndex] + '">' + text[j] + '</span>'; // entour le caractère choisi par des <span style="color: couleurs"...
@@ -40,15 +44,17 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
           }
   
           element.innerHTML = rainbowText; // inject dans le html
-        }
-      }
+      });
+    }
 
     
     function removeRainbowEffect(elements) {
-        Array.from(elements).forEach((element) => { // crée un array a partir d'élément pour pouvoir utiliser forEach
-          element.innerHTML = element.innerText;    // la fonction fait pour chaque élément :
-                                                    // enleve les spans en mettant dans le HTML le texte meme
-                                                    // !!! ducoup il n'y a plus dutout d'élément HTML (span, br par exemple) !!!
-        });
-    }
-  });
+      Array.from(elements).forEach(element => {
+          // Restaurer le HTML à partir de l'attribut data-original-html
+          if (element.hasAttribute('data-original-html')) {
+              element.innerHTML = element.getAttribute('data-original-html');
+              element.removeAttribute('data-original-html'); // Optionnel, nettoyer après restauration
+          }
+      });
+  }
+})
