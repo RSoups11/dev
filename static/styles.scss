@@ -29,8 +29,8 @@ body {
   @include container;
 }
 
-#en-tete {
-  flex:1; // Prend tout l'espace disponible du div
+#en-tete, #pdp {
+  flex:1; // prend equitablement le div
 }
 
 #top10 {

@@ -10,7 +10,7 @@ body {
   border-bottom: 2px solid #564d4d;
 }
 
-#en-tete {
+#en-tete, #pdp {
   flex: 1;
 }
 
