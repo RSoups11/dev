@@ -97,6 +97,7 @@ body {
 
 #colonne-gauche {
   color: $white_txt; 
+  margin-right: 2%;
   font-family: $titre-font;
 }
 
@@ -109,7 +110,6 @@ body {
 .categorie-gauche {
   text-align: right;
   font-size: $titre-size;
-  margin-right: 2%;
   margin-bottom: 2%;
 }
 

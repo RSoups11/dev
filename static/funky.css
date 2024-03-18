@@ -79,10 +79,12 @@ body {
 }
 
 #colonne-gauche {
+  margin-right: 2%;
   font-family: Lucida;
 }
 
 #colonne-droite {
+  margin-left: 2%;
   font-family: Lucida;
 }
 

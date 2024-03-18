@@ -82,6 +82,7 @@ body {
 
 #colonne-gauche {
   color: white;
+  margin-right: 2%;
   font-family: Lucida;
 }
 
@@ -94,7 +95,6 @@ body {
 .categorie-gauche {
   text-align: right;
   font-size: 25px;
-  margin-right: 2%;
   margin-bottom: 2%;
 }
 
