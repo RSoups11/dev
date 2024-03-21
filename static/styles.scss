@@ -10,8 +10,10 @@ $titre-size : 25px;
 $h3-size : 15px;
 $titre-font : Lucida;
 
-// Style pour les containers : 
+// test de responsive
+$baseFontSize: 16px; // font size de base pour body
 
+// Style pour les containers : 
 @mixin container {
   display: flex;
   align-items: center;
@@ -22,9 +24,34 @@ $titre-font : Lucida;
   border-bottom: $ligne;
 }
 
+// test responsive img
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+// Media Queries
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: calc(#{$baseFontSize} - 4px); // fontsize plus petit pour petit ecran
+  }
+
+  #container1 {
+    flex-direction: column; // pour petit écran on stack les élément verticalement
+  }
+
+  .texte-bas.rainbow {
+    font-size: 12px; // Adjust font size for better readability
+    padding: 10px; // Increase tap target size further
+    margin: 10px; // Increase space between links
+  }
+}
+
 
 body {
   background-color: $bg-color;
+  font-size: $baseFontSize;
   }
 
 
@@ -196,7 +223,7 @@ ul {
 
 
 #container3 {
-  width: 40%;
+  width: 55%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -220,12 +247,17 @@ ul {
 
 }
 
+.texte-bas.rainbow {
+  padding: 8px; // Increase tap target size
+  margin: 0 5px; // Add some space between links
+  display: inline-block; // Allow for padding and margin
+}
+
+
 .bloc {
   margin-bottom: 13%;
   margin-top: 0;
 }
-
-
 
 
 
