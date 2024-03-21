@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
         song.play();
         lectureButton.textContent = "Pause";
         theme.setAttribute("href", "../static/funky.css"); // passe en mode funky css
-        pdp.setAttribute("src", "/static/images/Monstre.png"); // photo funky
+        pdp.setAttribute("src", "../static/images/Monstre.png"); // photo funky
         applyRainbowColors(rainbow); // applique le funky rainbow texte
   
       } else { 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
         song.currentTime = 0; // reset la musique
         lectureButton.textContent = "Lecture";
         theme.setAttribute("href", "../static/styles.css"); // remet le css par défaut
-        pdp.setAttribute("src", "/static/images/tete-removebg.png"); // remet photo par défaut
+        pdp.setAttribute("src", "../static/images/tete-removebg.png"); // remet photo par défaut
        removeRainbowEffect(rainbow); // enleve le funky rainbow texte
       }
     });
