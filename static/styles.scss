@@ -42,9 +42,9 @@ img {
   }
 
   .texte-bas.rainbow {
-    font-size: 12px; // Adjust font size for better readability
-    padding: 10px; // Increase tap target size further
-    margin: 10px; // Increase space between links
+    font-size: 12px; // réduit font size sur petit ecran
+    padding: 10px; // permet de mieux cliquer (hitbox style)
+    margin: 10px; // empeche les liens de se chevaucher si écran réduit
   }
 }
 
