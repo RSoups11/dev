@@ -46,6 +46,15 @@ img {
     padding: 10px; // permet de mieux cliquer (hitbox style)
     margin: 10px; // empeche les liens de se chevaucher si écran réduit
   }
+
+  .button-container {
+    flex-direction: column; // pour petit écran on stack les élément verticalement
+    align-items: left;
+  }
+
+  .button-plus-infos {
+    margin-top: 1%;
+  }
 }
 
 
@@ -273,12 +282,14 @@ ul {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  max-width: 100px;
 }
 
 
 .button-lecture {
   background-color: $white_txt; 
   font-family: $font;
+  margin-right: 1%;
 }
 
 .button-lecture:hover {
@@ -288,8 +299,7 @@ ul {
 
 .button-plus-infos {
   background-color: #7f7f7f;
-  font-family: $font;
-  margin-left: 1%; 
+  font-family: $font; 
   color : $white_txt;
 }
 
@@ -299,4 +309,5 @@ ul {
 
 .button-container {
   margin-top: 2%;
+  display: flex;
 }
