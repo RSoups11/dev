@@ -1,6 +1,32 @@
 @charset "UTF-8";
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: calc(16px - 4px);
+  }
+  #container1 {
+    flex-direction: column;
+  }
+  .texte-bas.rainbow {
+    font-size: 12px;
+    padding: 10px;
+    margin: 10px;
+  }
+  .button-container {
+    flex-direction: column;
+    align-items: left;
+  }
+  .button-plus-infos {
+    margin-top: 1%;
+  }
+}
 body {
   background: linear-gradient(#e66465, #9198e5);
+  font-size: 16px;
 }
 
 #container1 {
@@ -171,7 +197,7 @@ ul {
 }
 
 #container3 {
-  width: 40%;
+  width: 55%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -210,11 +236,13 @@ ul {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  max-width: 100px;
 }
 
 .button-lecture {
   background-color: yellow;
   font-family: Helvetica;
+  margin-right: 1%;
 }
 
 .button-lecture:hover {
@@ -224,7 +252,6 @@ ul {
 .button-plus-infos {
   background-color: magenta;
   font-family: Helvetica;
-  margin-left: 1%;
   color: pink;
 }
 
@@ -234,4 +261,5 @@ ul {
 
 .button-container {
   margin-top: 2%;
+  display: flex;
 }/*# sourceMappingURL=funky.css.map */
