@@ -71,7 +71,7 @@ body {
 
 #top10 {
   display : flex;
-  align-items: center;
+  align-items: center; // centre le top10
   justify-content: flex-start;
   margin-bottom: 2%;
 }
@@ -125,8 +125,8 @@ body {
 }
 
 #colonne-gauche, #colonne-droite {
-  flex: 1;
-  align-self: stretch;
+  flex: 1; // Les deux colonnes du milieu occupent l'espace de la div
+  align-self: stretch; // les deux colonnes (div) sont de la meme taille
   padding: 20px;
   padding-top: 0;
 }
