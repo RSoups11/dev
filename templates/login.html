@@ -12,9 +12,9 @@
         <img src="{{ url_for('static', filename='/images/logo-r.jpg')}}" alt="Logo R" class="img-logo">
         <div class="login-container">
             <h1>To access admin interface, please log in </h1>
-            <form class="login-form">
-                <input type="email" placeholder="Adresse e-mail" required>
-                <input type="text" placeholder="password" required>
+            <form class="login-form" method="POST" action="/login">
+                <input type="email" name="email" placeholder="Adresse e-mail" required>
+                <input type="text" name="password" placeholder="password" required>
                 <button type="submit" class="button-start button"> Start > </button>
             </form>
         </div>
