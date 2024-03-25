@@ -7,7 +7,7 @@
         <title>CV - Raphael Soupaya Valliama</title>
 
         <link id="theme" rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
-        <!-- <link id="theme" rel="stylesheet" type="text/css" href="../static/styles.css"> -->
+        <!--<link id="theme" rel="stylesheet" type="text/css" href="../static/styles.css"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="../static/script.js"></script>
         
@@ -15,13 +15,18 @@
 
     <body>
 
+        <div id="login">
+            <button class="button button-login">login</button>
+        </div>
+
         <div id="container1">
+
 
             <div id="en-tete">
 
                 <div class="button-container">
-                    <audio id="song"  src="{{ url_for('static', filename='/images/music.mp3')}}" type="audio/mp3"></audio>
-                    <!-- <audio id="song"  src="../static/images/music.mp3" type="audio/mp3"></audio> -->
+                    <audio id="song"  src="{{ url_for('static', filename='/images/music.mp3')}}" type="audio/mp3"></audio> 
+                    <!--<audio id="song"  src="../static/images/music.mp3" type="audio/mp3"></audio> -->
 
                     <button class="button button-lecture">Lecture</button>
                     <a href="https://www.linkedin.com/in/raphael-soupaya-valliama-928a32289/" class="button button-plus-infos" target="_blank">More infos</a>
@@ -31,7 +36,7 @@
                 <p class="rainbow"> AI ENGINEER STUDENT </p>
 
                 <div id="top10">
-                    <img src="{{ url_for('static', filename='/images/top10.png')}}" alt="Top 10"> <p class="rainbow"> 100% Recommended </p>
+                    <img src="{{ url_for('static', filename='/images/top10.png')}}" alt="Top 10"> <p class="rainbow"> 100% Recommended </p> 
                     <!-- <img src="../static/images/top10.png" alt="Top 10"> <p class="rainbow"> 100% Recommended </p> -->
                 </div>
                 <p class="disponibilite"> Next season begins on 20th May 2024 <span class="grisé"> (open for work) </span> </p> 
@@ -39,6 +44,7 @@
             </div>
             <img id="pdp" src="{{ url_for('static', filename='/images/tete-removebg.png')}}" alt="Photo de profil"> 
             <!-- <img id="pdp" src="../static/images/tete-removebg.png" alt="Photo de profil"> -->
+
         </div>
         
         <div id="container2">

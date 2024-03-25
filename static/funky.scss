@@ -299,3 +299,18 @@ ul {
   margin-top: 2%;
   display: flex;
 }
+
+// Style bouton login et le div
+
+#login {
+  float : right;
+}
+
+.button-login {
+  background-color: $yellow_txt; 
+  font-family: $font;
+}
+
+.button-login:hover {
+  background-color: pink; 
+}
