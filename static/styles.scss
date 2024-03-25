@@ -10,7 +10,7 @@ $titre-size : 25px;
 $h3-size : 15px;
 $titre-font : Lucida;
 
-// test de responsive
+// fontsize par defaut pour tester le responsive
 $baseFontSize: 16px; // font size de base pour body
 
 // Style pour les containers : 
@@ -64,6 +64,7 @@ body {
   }
 
 
+// Style du début de la page (en-tete)
 #container1 {
   @include container;
 }
@@ -118,7 +119,7 @@ body {
   color : $gray_txt;
 }
 
-
+// Style pour le contenu du milieu de page
 #container2 {
   @include container;
 }
@@ -155,12 +156,14 @@ body {
   margin-bottom: 2%;
 }
 
+// Parametre reutilisable pour les textes
 @mixin texte-param {
   color : $white_txt;
   font-family: $font;
   font-size: $text-size;
 }
 
+// Parametre reutilisable pour les titres
 @mixin title {
   font-size: $h3-size;
   font-family: $font;
@@ -230,7 +233,7 @@ ul {
   padding-left: 0;
 }
 
-
+// Container du bas légèrement différent des deux autres container
 #container3 {
   width: 55%;
   margin-left: auto;
@@ -270,7 +273,7 @@ ul {
 
 
 
-
+// Style pour les boutons "Lecture" et "More infos"
 .button {
   padding: 10px 20px;
   color: black;
