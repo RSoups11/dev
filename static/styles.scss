@@ -316,7 +316,7 @@ ul {
 }
 
 
-// Style bouton login et le div
+// Style du bouton login
 
 #login {
   float : right;
@@ -329,4 +329,58 @@ ul {
 
 .button-login:hover {
   background-color: #555; 
+}
+
+
+
+// Style pour la page login
+
+
+.img-logo {
+  width : 20%
+}
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  margin-top: 7%;
+}
+
+.login-container h1 {
+  color : $white_txt;
+  font-size: 1.5em;
+}
+
+.login-container {
+  width: 30%;
+  max-width: 450px;
+  border-radius: 5px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: $red_txt;
+  color: $white_txt;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-start:hover {
+  background-color: #D22B2B;
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="login-wrapper">
+
+        <img src="{{ url_for('static', filename='/images/logo-r.jpg')}}" alt="Logo R" class="img-logo">
+        <div class="login-container">
+            <h1>To access admin interface, please log in </h1>
+            <form class="login-form">
+                <input type="email" placeholder="Adresse e-mail" required>
+                <input type="text" placeholder="password" required>
+                <button type="submit" class="button-start button"> Start > </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
