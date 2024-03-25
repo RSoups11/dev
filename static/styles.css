@@ -23,6 +23,17 @@ img {
   .button-plus-infos {
     margin-top: 1%;
   }
+  .login-container h1 {
+    font-size: 5px;
+  }
+  .login-form input {
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    border: none;
+    border-radius: 5px;
+  }
 }
 body {
   background-color: black;
@@ -221,6 +232,7 @@ ul {
 #contact {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .texte-bas {
@@ -319,7 +331,7 @@ ul {
 .login-form input {
   width: 100%;
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 2%;
   border: none;
   border-radius: 5px;
 }
@@ -327,7 +339,7 @@ ul {
 .login-form button {
   width: 100%;
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 2%;
   border: none;
   border-radius: 5px;
   background-color: red;
