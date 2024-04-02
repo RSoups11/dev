@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 80; // or any port you prefer
+const port = 80; 
 const db = require('./static/models/index.js');
 const path = require('path');
 
@@ -11,6 +11,7 @@ app.use(express.static('static'));
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
+    console.log(`Logging in with: ${email} ${password}`);
     const user = await db.users.findOne({ where: { email, password } });
   
     if (user) {
@@ -32,7 +33,6 @@ app.get('/login', (req, res) => {
 
 
 
-
 async function addUser(email, password) {
     try {
       const newUser = await db.users.create({
@@ -45,8 +45,6 @@ async function addUser(email, password) {
       console.error("Error adding user:", error);
     }
   }
-
-//addUser('raphael.soupayavalliama@gmail.com', 'bougfaible974');
 
 db.sequelize.sync().then(() => {
   app.listen(80, () => console.log('Server running on port 80'));
