@@ -11,7 +11,6 @@ app.use(express.static('static'));
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    console.log(`Logging in with: ${email} ${password}`);
     const user = await db.users.findOne({ where: { email, password } });
   
     if (user) {
