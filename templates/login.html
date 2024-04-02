@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
     <div class="login-wrapper">
 
-        <img src="{{ url_for('static', filename='/images/logo-r.jpg')}}" alt="Logo R" class="img-logo">
+        <img src="/images/logo-r.jpg" alt="Logo R" class="img-logo">
         <div class="login-container">
             <h1>To access admin interface, please log in </h1>
             <form class="login-form" method="POST" action="/login">
-                <input type="email" name="email" placeholder="Adresse e-mail" required>
+                <input type="email" name="email" placeholder="e-mail address" required>
                 <input type="password" name="password" placeholder="password" required>
                 <button type="submit" class="button-start button"> Start > </button>
             </form>

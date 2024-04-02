@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
       if (song.paused) { // si il n'y a pas de musique lors de l'appuie alors on lance
         song.play();
         lectureButton.textContent = "Pause";
-        theme.setAttribute("href", "../static/funky.css"); // passe en mode funky css
-        pdp.setAttribute("src", "../static/images/Monstre.png"); // photo funky
+        theme.setAttribute("href", "/funky.css"); // passe en mode funky css
+        pdp.setAttribute("src", "/images/Monstre.png"); // photo funky
         applyRainbowColors(rainbow); // applique le funky rainbow texte
   
       } else { 
         song.pause(); // si re appuie du bouton lorsque la musique joue cela va arreter la musique
         song.currentTime = 0; // reset la musique
         lectureButton.textContent = "Lecture";
-        theme.setAttribute("href", "../static/styles.css"); // remet le css par défaut
-        pdp.setAttribute("src", "../static/images/tete-removebg.png"); // remet photo par défaut
+        theme.setAttribute("href", "/styles.css"); // remet le css par défaut
+        pdp.setAttribute("src", "/images/tete-removebg.png"); // remet photo par défaut
        removeRainbowEffect(rainbow); // enleve le funky rainbow texte
       }
     });
