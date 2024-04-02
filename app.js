@@ -46,7 +46,7 @@ async function addUser(email, password) {
     }
   }
 
-addUser('raphael.soupayavalliama@gmail.com', 'bougfaible974');
+//addUser('raphael.soupayavalliama@gmail.com', 'bougfaible974');
 
 db.sequelize.sync().then(() => {
   app.listen(80, () => console.log('Server running on port 80'));
