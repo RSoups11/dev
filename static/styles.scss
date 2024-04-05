@@ -234,7 +234,7 @@ h4 {
   text-align: left;
   margin-bottom: 4%;
   margin-top: 0;
-  margin-left: 5%
+  margin-left: 2%
 }
 
 #esilien {
@@ -245,6 +245,7 @@ h4 {
 ul {
   padding-left: 0;
 }
+
 
 // Container du bas légèrement différent des deux autres container
 #container3 {
@@ -396,4 +397,16 @@ ul {
 
 .button-start:hover {
   background-color: #D22B2B;
+}
+
+
+// Style pour la page admin
+
+#admin-titre {
+  color: $white_txt;
+  text-align: center;
+}
+
+.admin-form {
+  @include container;
 }
