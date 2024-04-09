@@ -52,7 +52,6 @@ app.post('/update-info', async (req, res) => {
 
 app.post('/update-education', async (req, res) => {
   const { updatedEducation, newEducation } = req.body;
-  console.log(req.body);
 
   try {
     if (updatedEducation && Array.isArray(updatedEducation)) {
@@ -84,12 +83,45 @@ app.post('/update-education', async (req, res) => {
 });
 
 
+app.post('/update-experience', async (req, res) => {
+  const { updatedExperience, newExperience } = req.body;
+  console.log(req.body);
+  try {
+    if (updatedExperience && Array.isArray(updatedExperience)) {
+      for (const exp of updatedExperience) {
+        
+        const { id, title, location, description } = exp;
+        const experienceToUpdate = await db.experience.findByPk(id);
+        if (experienceToUpdate) {
+          // Update the existing record
+          await experienceToUpdate.update({ title: title, location: location, description: description });
+          console.log("updated to the database");
+        }
+      }
+    }
+
+    if (newExperience) {
+      // title, location and description should always have the same length
+      for (let index = 1; index<newExperience.title.length; index++) {
+        console.log("added to the database");
+        await db.experience.create({ title: newExperience.title[index], location: newExperience.location[index], description: newExperience.description[index] });
+      }
+    }
+
+    res.redirect('/admin');
+  } catch (error) {
+    console.error('Error updating experience:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
 
   app.get('/', async (req, res) => {
     try {
       // Récupération des données de la base de données
       const info = await db.info.findAll();
-      const experience = await db.experience.findAll();
+      const experience = await db.experience.findAll({ order : [['id', 'DESC']] });
       const expertise = await db.expertise.findAll();
       const interest = await db.interest.findAll();
       const certificates = await db.certificates.findAll();

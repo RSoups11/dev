@@ -18,26 +18,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var addButton = document.getElementById('add-education-button');
-    if (!addButton) {
-      console.error('Add education button not found.');
-      return;
-    }
+    var addButtonEducation = document.getElementById('add-education-button');
+    var addButtonExperience = document.getElementById('add-experience-button');
     
-    addButton.addEventListener('click', function() {
-      var template = document.querySelector('.education-entry-template');
+    addButtonEducation.addEventListener('click', function() {
+      let template = document.querySelector('.education-entry-template');
       if (!template) {
         console.error('Template not found.');
         return;
       }
       
-      var clone = template.cloneNode(true);
+      let clone = template.cloneNode(true);
       clone.style.display = 'block';
       clone.id = '';
       clone.querySelector('input').required = true;
       clone.querySelector('textarea').required = true;
 
-      
+
       var newEducationContainer = document.getElementById('new-education');
       if (!newEducationContainer) {
         console.error('The new-education element was not found.');
@@ -47,4 +44,29 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(newEducationContainer); // This should show the element
       newEducationContainer.appendChild(clone);
     });
+
+
+    addButtonExperience.addEventListener('click', function() {
+        let template = document.querySelector('.experience-entry-template');
+        if (!template) {
+          console.error('Template not found.');
+          return;
+        }
+        
+        let clone = template.cloneNode(true);
+        clone.style.display = 'block';
+        clone.id = '';
+        clone.querySelector('input').required = true;
+        clone.querySelector('textarea').required = true;
+  
+  
+        var newExperienceContainer = document.getElementById('new-experience');
+        if (!newExperienceContainer) {
+          console.error('The new-experience element was not found.');
+          return;
+        }
+        
+        console.log(newExperienceContainer); // This should show the element
+        newExperienceContainer.appendChild(clone);
+      });
   });

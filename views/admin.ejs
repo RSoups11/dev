@@ -64,27 +64,6 @@
             </div>
             <div class="accordion-content">
 
-                <div class="submit-button">
-                    <button type="button" id="add-education-button">Add New Education</button>
-                </div>
-
-                <div class="education-entry-template">
-                    <div class="changement">
-                        <label class="label-for" for="newEducation">Title:</label>
-                        <input type="text" id="new_education_title" name="newEducation[title]">
-                    </div>
-
-                    <div class="changement">
-                        <label class="label-for" for="newEducation">Description:</label>
-                        <textarea id="new_education_description" name="newEducation[description]" rows="2"></textarea>
-                    </div>
-                </div>
-
-                
-                <div id="new-education"></div>
-                <br>
-                    <span class="grey-line"></span>
-                <br>
 
                 <% education.forEach(function(edu) { %>
 
@@ -105,7 +84,93 @@
                     <br>
 
                 <% }); %>
-            
+                
+                <div class="submit-button">
+                    <button type="button" id="add-education-button">Add New Education</button>
+                </div>
+
+                <div class="education-entry-template">
+                    <div class="changement">
+                        <label class="label-for" for="newEducation">Title:</label>
+                        <input type="text" id="new_education_title" name="newEducation[title]">
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="newEducation">Description:</label>
+                        <textarea id="new_education_description" name="newEducation[description]" rows="2"></textarea>
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+                </div>
+
+                
+                <div id="new-education"></div>
+
+                <div class="submit-button">
+                    <button type="submit">Update</button>
+                </div>
+            </div>
+        </form>
+
+        <form class="admin-form" action="/update-experience" method="post">
+            <div class="accordion-toggle">
+                <h2>Experiences<span class="arrow">▼</span> </h2> 
+            </div>
+            <div class="accordion-content">
+
+                <% experience.forEach(function(exp) { %>
+
+                    <input type="hidden" name="updatedExperience[<%= exp.id %>][id]" value="<%= exp.id %>">
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= exp.title %>">Title:</label>
+                        <input type="text" id="experience_title" name="updatedExperience[<%= exp.id %>][title]" value="<%= exp.title %>" required>
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= exp.location %>">Location:</label>
+                        <textarea type="text" id="experience_location" name="updatedExperience[<%= exp.id %>][location]" rows="2" value="<%= exp.location %>" required> <%= exp.location %> </textarea>
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= exp.description %>">Description:</label>
+                        <textarea type="text" id="experience_description" name="updatedExperience[<%= exp.id %>][description]" rows="2" value="<%= exp.description %>" required> <%= exp.description %> </textarea>
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+
+                <% }); %>
+                
+                <div class="submit-button">
+                    <button type="button" id="add-experience-button">Add New Experiences</button>
+                </div>
+
+
+                <div class="experience-entry-template">
+                    <div class="changement">
+                        <label class="label-for" for="newExperience">Title:</label>
+                        <input type="text" id="new_experience_title" name="newExperience[title]">
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="newExperience">Location:</label>
+                        <input type="text" id="new_experience_location" name="newExperience[location]">
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="newExperience">Description:</label>
+                        <textarea id="new_experience_description" name="newExperience[description]" rows="2"></textarea>
+                    </div>
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+                </div>
+                
+                <div id="new-experience"></div>
 
                 <div class="submit-button">
                     <button type="submit">Update</button>
