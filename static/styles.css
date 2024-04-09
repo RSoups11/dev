@@ -32,10 +32,13 @@ img {
     padding-right: 5px;
     border: none;
     border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.9568627451);
+    border: 2px solid #564d4d;
+    color: white;
   }
 }
 body {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9568627451);
   font-size: 16px;
 }
 
@@ -228,6 +231,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .texte-bas {
@@ -329,6 +333,9 @@ ul {
   margin-top: 2%;
   border: none;
   border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #564d4d;
+  color: white;
 }
 
 .login-form button {
@@ -352,7 +359,57 @@ ul {
   text-align: center;
 }
 
+.changement {
+  margin-bottom: 5%;
+}
+
+#submit-button {
+  margin-bottom: 5%;
+}
+
+.arrow {
+  float: right;
+}
+
+.accordion-content {
+  padding: 0 10px;
+  display: none;
+}
+
+.accordion-toggle {
+  cursor: pointer;
+}
+
+.grey-line {
+  height: 2px;
+  width: 100%;
+  background-color: #564d4d;
+  float: left;
+  padding-left: 5%;
+}
+
+.label-for {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.accordion-content input, textarea {
+  width: 100%;
+  padding: 15px;
+  margin-top: 2%;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid #564d4d;
+  color: white;
+}
+
 .admin-form {
+  width: 30%;
+}
+
+.admin-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -360,4 +417,32 @@ ul {
   margin-left: auto;
   margin-right: auto;
   border-bottom: 2px solid #564d4d;
+  flex-direction: column;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 2%;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+
+.accordion-toggle h2 {
+  color: white;
+}
+
+.submit-button {
+  width: 100%;
+  display: flex;
+  padding-left: 4%;
+}
+
+.education-entry-template {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */

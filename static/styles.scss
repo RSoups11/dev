@@ -1,5 +1,5 @@
 // Variables réutilisables
-$bg-color : black;
+$bg-color : #000000f4;
 $gray_txt : #564d4d;
 $white_txt : white;
 $red_txt : red;
@@ -67,6 +67,9 @@ img {
     padding-right: 5px;
     border: none;
     border-radius: 5px;
+    background-color : $bg-color;
+    border: 2px solid $gray_txt;
+    color : $white_txt;
   }
 }
 
@@ -260,6 +263,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .texte-bas {
@@ -377,6 +381,9 @@ ul {
   margin-top: 2%;
   border: none;
   border-radius: 5px;
+  background-color : transparent;
+  border: 2px solid $gray_txt;
+  color: $white_txt;
 }
 
 .login-form button {
@@ -403,6 +410,84 @@ ul {
   text-align: center;
 }
 
+.changement {
+  margin-bottom: 5%;
+}
+
+#submit-button {
+  margin-bottom: 5%;
+}
+
+.arrow {
+  float: right;
+}
+
+.accordion-content {
+  padding: 0 10px;
+  display: none;
+}
+
+.accordion-toggle {
+  cursor: pointer;
+}
+
+.grey-line {
+  height: 2px;
+  width: 100%;
+  background-color: #564d4d;;
+  float: left;
+  padding-left: 5%;
+}
+
+.label-for {
+  color : $white_txt;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.accordion-content input, textarea {
+  width: 100%;
+  padding: 15px;
+  margin-top: 2%;
+  border: none;
+  border-radius: 5px;
+  background-color : transparent;
+  border: 2px solid $gray_txt;
+  color: $white_txt;
+}
+
 .admin-form {
+  width: 30%;
+}
+
+.admin-container {
   @include container;
+  flex-direction: column;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 2%;
+  border: none;
+  border-radius: 5px;
+  background-color: $red_txt;
+  color: $white_txt;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+
+.accordion-toggle h2 {
+  color : $white_txt;
+}
+
+.submit-button {
+  width: 100%;
+  display: flex;
+  padding-left: 4%;
+}
+
+.education-entry-template {
+  display: none;
 }

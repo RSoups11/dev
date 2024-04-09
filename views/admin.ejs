@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/admin-script.js"></script>
+
+<body>
+    
+    
+    <div class="admin-container">
+
+        <h1 id="admin-titre">Administration</h1>
+        <br>
+        <form class="admin-form" action="/update-info" method="post">
+            <div class="accordion-toggle">
+                <h2>Infos<span class="arrow">▼</span> </h2> 
+            </div>
+            <div class="accordion-content">
+                <% info.forEach(function(item) { %>
+                    <div class="changement">
+                        <label class="label-for" for="disponibilite_<%= item.disponibilite %>">Disponibility:</label>
+                        <input type="text" id="disponibilte_info" name="disponibilite" value="<%= item.disponibilite%>" required>
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="position_<%= item.position %>">Position:</label>
+                        <input type="text" id="position_info" name="position" value="<%= item.position %>" required>
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="synopsis_<%= item.synopsis %>">Synopsis:</label>
+                        <textarea type="text" id="synopsis_info" name="synopsis" rows="4" value="<%= item.synopsis %>" required> <%= item.synopsis %> </textarea>
+                    </div>
+                    
+                    <div class="changement">
+                        <label class="label-for" for="email_<%= item.email %>">E-mail:</label>
+                        <input type="text" id="email_info" name="email" value="<%= item.email %>" required>
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="number_<%= item.number %>">Phone number:</label>
+                        <input type="text" id="number_info" name="number" value="<%= item.number %>" required>
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="website_<%= item.website %>">Website:</label>
+                        <input type="text" id="website_info" name="website" value="<%= item.website %>" required>
+                    </div>
+
+                <% }); %>
+                <div class="submit-button">
+                    <button type="submit">Update</button>
+                </div>
+            </div>
+
+        </form>
+
+        <form class="admin-form" action="/update-education" method="post">
+            <div class="accordion-toggle">
+                <h2>Education<span class="arrow">▼</span> </h2> 
+            </div>
+            <div class="accordion-content">
+
+                <div class="submit-button">
+                    <button type="button" id="add-education-button">Add New Education</button>
+                </div>
+
+                <div class="education-entry-template">
+                    <div class="changement">
+                        <label class="label-for" for="newEducation">Title:</label>
+                        <input type="text" id="new_education_title" name="newEducation[title]">
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="newEducation">Description:</label>
+                        <textarea id="new_education_description" name="newEducation[description]" rows="2"></textarea>
+                    </div>
+                </div>
+
+                
+                <div id="new-education"></div>
+                <br>
+                    <span class="grey-line"></span>
+                <br>
+
+                <% education.forEach(function(edu) { %>
+
+                    <input type="hidden" name="updatedEducation[<%= edu.id %>][id]" value="<%= edu.id %>">
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= edu.education_title %>">Title:</label>
+                        <input type="text" id="education_title" name="updatedEducation[<%= edu.id %>][title]" value="<%= edu.education_title %>" required>
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= edu.education_description %>">Description:</label>
+                        <textarea type="text" id="education_description" name="updatedEducation[<%= edu.id %>][description]" rows="2" value="<%= edu.education_description %>" required> <%= edu.education_description %> </textarea>
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+
+                <% }); %>
+            
+
+                <div class="submit-button">
+                    <button type="submit">Update</button>
+                </div>
+            </div>
+        </form>
+            
+    </div>
+    
+</body>
+</html>

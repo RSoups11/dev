@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
     var song = document.getElementById("song"); // récupère l'élément d'id "song" et stock dans song
     var theme = document.getElementById("theme"); // récupère l'élément d'id "theme" et stock dans theme
     var pdp = document.getElementById("pdp"); // récupère l'élément d'id "pdp" et stock dans pdp
+    
 
     // récupère les textes pour mettre en rainbow color
     var rainbow = document.getElementsByClassName("rainbow");
@@ -57,4 +58,4 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
           }
       });
   }
-})
+});

@@ -22,6 +22,68 @@ app.post('/login', async (req, res) => {
     }
   });
 
+app.post('/update-info', async (req, res) => {
+  const { position, disponibilite, synopsis, email, number, website } = req.body;
+
+  try {
+    const infoToUpdate = await db.info.findOne();
+    
+    if (infoToUpdate) {
+      // Update the existing record
+      await infoToUpdate.update({
+        position: position,
+        disponibilite: disponibilite,
+        synopsis: synopsis,
+        email: email,
+        number: number,
+        website: website
+      });
+      
+      res.redirect('/admin'); // Redirect back to the admin page
+    } else {
+      res.status(404).send('Info not found');
+    }
+  } catch (error) {
+    console.error('Error updating info:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+app.post('/update-education', async (req, res) => {
+  const { updatedEducation, newEducation } = req.body;
+  console.log(req.body);
+
+  try {
+    if (updatedEducation && Array.isArray(updatedEducation)) {
+      for (const edu of updatedEducation) {
+        
+        const { id, title, description } = edu;
+        const educationToUpdate = await db.education.findByPk(id);
+        if (educationToUpdate) {
+          // Update the existing record
+          await educationToUpdate.update({ education_title: title, education_description: description });
+          console.log("updated to the database");
+        }
+      }
+    }
+
+    if (newEducation) {
+      // title and description should always have the same length
+      for (let index = 1; index<newEducation.title.length; index++) {
+        console.log("added to the database");
+        await db.education.create({ education_title: newEducation.title[index], education_description: newEducation.description[index] });
+      }
+    }
+
+    res.redirect('/admin');
+  } catch (error) {
+    console.error('Error updating education:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
 
   app.get('/', async (req, res) => {
     try {
@@ -32,7 +94,7 @@ app.post('/login', async (req, res) => {
       const interest = await db.interest.findAll();
       const certificates = await db.certificates.findAll();
       const skills = await db.skills.findAll();
-      const education = await db.education.findAll();
+      const education = await db.education.findAll({ order : [['id', 'DESC']] });
   
       // Rendu de la page en utilisant les données récupérées
       res.render('index.ejs', { info, experience, expertise, interest, skills, certificates, education});
@@ -44,13 +106,28 @@ app.post('/login', async (req, res) => {
 
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'templates', 'login.html'))
+    res.sendFile(path.join(__dirname, 'views', 'login.html'))
 })
 
 
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, 'templates', 'admin.html'))
-})
+app.get('/admin', async (req, res) => {
+  try {
+    // Récupération des données de la base de données
+    const info = await db.info.findAll();
+    const experience = await db.experience.findAll();
+    const expertise = await db.expertise.findAll();
+    const interest = await db.interest.findAll();
+    const certificates = await db.certificates.findAll();
+    const skills = await db.skills.findAll();
+    const education = await db.education.findAll();
+
+    // Render the admin page with the fetched data
+    res.render('admin.ejs', { info, experience, expertise, interest, skills, certificates, education });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 db.sequelize.sync().then(() => {
   app.listen(80, () => console.log('Server running on port 80'));
@@ -72,7 +149,7 @@ const $ = cheerio.load(htmlContent);
 // Table info (db.info)
 const position = $('.position').text();
 const disponibilite = $('.disponibilite').text();
-const synopsis = $('.synopsis').text();
+const synopsis = $('.synopsis').text().trim();
 const email = $('.email').text().trim();
 const number = $('.number').text();
 const website = $('a.website').attr('href');
