@@ -59,3 +59,26 @@ document.addEventListener("DOMContentLoaded", function() { // event listener qui
       });
   }
 });
+
+
+function downloadPDF() {
+
+  // Clone the current document
+  let element = document.body.cloneNode(true);
+
+  // Remove the button-container from the clone
+  var buttons = element.querySelector('#button-container');
+  if (buttons) {
+    buttons.style.display = 'none';
+  }
+
+  // Use html2pdf to create the PDF
+  html2pdf().from(element).set({
+    margin: 0,
+    filename: 'CV.pdf',
+    pagebreak: { mode: 'css', avoid: '.bloc' },
+    image: { type: 'png', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true, logging: true, dpi: 192, letterRendering: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+  }).save();
+}

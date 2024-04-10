@@ -3,15 +3,21 @@ img {
   height: auto;
 }
 
-@media only screen and (max-width: 768px) {
-  body {
-    font-size: calc(16px - 4px);
+@media print {
+  /* Prevent page breaks inside these elements */
+  .bloc {
+    page-break-inside: avoid;
   }
+}
+@media only screen and (max-width: 768px) {
   #container1 {
     flex-direction: column;
   }
+  .bloc h1 {
+    font-size: 25px;
+  }
   .texte-bas.rainbow {
-    font-size: 12px;
+    font-size: 14px;
     padding: 10px;
     margin: 10px;
   }
@@ -50,6 +56,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   border-bottom: 2px solid #564d4d;
+}
+
+#wrap-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
 
 #top10 {
@@ -264,6 +276,7 @@ ul {
   cursor: pointer;
   transition: background-color 0.3s ease;
   max-width: 100px;
+  flex: 1;
 }
 
 .button-lecture {
@@ -288,19 +301,53 @@ ul {
 
 .button-container {
   margin-top: 2%;
+  gap: 5px;
+}
+
+#button-container {
   display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: start;
 }
 
-#login {
-  float: right;
+#button-container a {
+  text-decoration: none;
 }
 
-.button-login {
+#button-container .button {
+  flex: 1; /* Makes buttons grow equally to fill the container */
+  min-width: 120px; /* Increase minimum width as needed to fit the text */
+  padding: 10px; /* Adjust padding as needed */
+  /* Add text-overflow properties if needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.button-wrapper {
+  margin-bottom: 1px; /* Adjust as needed for spacing */
+}
+
+.button-login, .button-download {
+  display: inline-block;
+  white-space: nowrap; /* Ensure text doesn't wrap */
+  overflow: visible; /* Text will not be clipped */
   background-color: white;
   font-family: Helvetica;
+  min-width: 100px; /* Set a minimum width to fit the text */
+  display: block; /* Change display to block for full width */
+  width: 100%; /* Make button take the full width of its parent */
+  box-sizing: border-box; /* Make sure padding and border are included in the width */
 }
 
-.button-login:hover {
+.button-download {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-login:hover, .button-download:hover {
   background-color: #555;
 }
 

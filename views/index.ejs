@@ -9,131 +9,98 @@
         <!-- <link id="theme" rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}"> -->
         <link id="theme" rel="stylesheet" type="text/css" href="/styles.css"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
         <script src="/script.js"></script>
         
     </head>
 
     <body>
-
-        <div id="login">
-            <a href="/login" target="_blank">
-                <button class="button button-login">login</button>
-            </a>       
-        </div>
-
+      <div id="wrap-top">
         <div id="container1">
-
-
-            <div id="en-tete">
-
-                <div class="button-container">
-                    <!-- <audio id="song"  src="{{ url_for('static', filename='/images/music.mp3')}}" type="audio/mp3"></audio> -->
-                    <audio id="song"  src="/images/music.mp3" type="audio/mp3"></audio>
-
-                    <button class="button button-lecture">Lecture</button>
-                    <a href="https://www.linkedin.com/in/raphael-soupaya-valliama-928a32289/" class="button button-plus-infos" target="_blank">More infos</a>
-                </div>
-
-                <h1 class="name"> Raphael <span id="nom"> Soupaya Valliama </span></h1>
-                <% info.forEach(function(item) { %>
-                    <p class="rainbow position"> <%= item.position %> </p>
-                  <% }); %>
-
-                <div id="top10">
-                    <!-- <img src="{{ url_for('static', filename='/images/top10.png')}}" alt="Top 10"> <p class="rainbow"> 100% Recommended </p> -->
-                    <img src="/images/top10.png" alt="Top 10"> <p class="rainbow"> 100% Recommended </p> 
-                </div>
-                <% info.forEach(function(item) { %>
-                    <p class="disponibilite"> <%= item.disponibilite %> </p>
-                  <% }); %>
-                
+          <div id="en-tete">
+            <div class="button-container">
+              
+              <audio id="song"  src="/images/music.mp3" type="audio/mp3"></audio>
+              <button class="button button-lecture">Lecture</button>
+              <a href="https://www.linkedin.com/in/raphael-soupaya-valliama-928a32289/" class="button button-plus-infos" target="_blank">More infos</a>
             </div>
-            <!-- <img id="pdp" src="{{ url_for('static', filename='/images/tete-removebg.png')}}" alt="Photo de profil"> -->
-            <img id="pdp" src="/images/tete-removebg.png" alt="Photo de profil"> 
 
+            <h1 class="name"> Raphael <span id="nom"> Soupaya Valliama </span></h1>
+              <% info.forEach(function(item) { %>
+                <p class="rainbow position"> <%= item.position %> </p>
+              <% }); %>
+
+              <div id="top10">
+                <img src="/images/top10.png" alt="Top 10"> <p class="rainbow"> 100% Recommended </p> 
+              </div>
+              <% info.forEach(function(item) { %>
+                <p class="disponibilite"> <%= item.disponibilite %> </p>
+              <% }); %>
+          </div>
+          <img id="pdp" src="/images/tete-removebg.png" alt="Photo de profil"> 
+        </div>
+
+        <div id="button-container">
+          <div class="button-wrapper">
+            <a href="/login" target="_blank">
+              <button class="button button-login">Login</button>
+            </a>
+          </div>
+
+          <div class="button-wrapper">
+            <buttin id="downloadCvButton" class="button button-download" onclick="downloadPDF()">Download</buttin>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="container2">
+
+        <div id="colonne-gauche">
+
+          <div class="bloc">
+            <h1 class="categorie-gauche rainbow">SYNOPSIS</h1>
+              <% info.forEach(function(item) { %>
+                  <p class="texte-gauche rainbow synopsis"> <%= item.synopsis %> </p>
+                <% }); %>
+          </div>
+        
+        
+          <div class="bloc">
+            <h1 class="categorie-gauche rainbow">EDUCATION</h1>
+            <% education.forEach(edu => { %>
+              <div class="element">
+                <h4 class="titre-gauche rainbow"><%= edu.education_title %></h4>
+                <p class="texte-gauche rainbow"><%= edu.education_description %></p>
+              </div>
+            <% }) %>
+          </div>
+          
+              
+            <div class="bloc">
+              <h1 class="categorie-gauche rainbow">INTEREST</h1>
+              <div class="element">
+                <ul>
+                  <% interest.forEach(inter => { %>
+                    <li class="interet rainbow"><%= inter.interest_name %></li> 
+                  <% }) %>
+                </ul>
+              </div>
+            </div>
+
+        
+            <div class="bloc">
+              <h1 class="categorie-gauche rainbow">CERTIFICATES</h1>
+              <% certificates.forEach(certif => { %>
+                <div class="element certif">
+                  <h4 class="titre-gauche rainbow certificates-title"><%= certif.certificates_title %></h4>
+                  <p class="texte-gauche rainbow certificates-desc"><%= certif.certificates_description %></p>
+                </div>
+              <% }) %>
+            </div>
         </div>
         
-        <div id="container2">
-
-            <div id="colonne-gauche">
-
-                <div class="bloc">
-                    <h1 class="categorie-gauche rainbow">SYNOPSIS</h1>
-                    <% info.forEach(function(item) { %>
-                        <p class="texte-gauche rainbow synopsis"> <%= item.synopsis %> </p>
-                      <% }); %>
-                </div>
-
-                <div class="bloc">
-                    <h1 class="categorie-gauche rainbow">EDUCATION</h1>
-                    <% education.forEach(edu => { %>
-                      <div class="element">
-                        <h4 class="titre-gauche rainbow"><%= edu.education_title %></h4>
-                        <p class="texte-gauche rainbow"><%= edu.education_description %></p>
-                      </div>
-                    <% }) %>
-                </div>
-                <!--
-                <div class="bloc">
-                    <h1 class="categorie-gauche rainbow"> EDUCATION </h1>
-
-                    <div class="element">
-                        <h4 class="titre-gauche rainbow">Esiroi / 2021 - Current</h4>
-                        <p class="texte-gauche rainbow"> First year engineering student specializing in IT</p>
-                    </div>
-
-                    <div class="element">
-                        <h4 class="titre-gauche rainbow">Lycée Lislet Geoffroy / 2017-2020</h4>
-                        <p class="texte-gauche rainbow"> BAC-S in engineering science with ISN option (computer science, digital science)</p>
-                    </div>
-                </div> -->
-                
-
-                <div class="bloc">
-                    <h1 class="categorie-gauche rainbow">INTEREST</h1>
-                    <div class="element">
-                      <ul>
-                        <% interest.forEach(inter => { %>
-                          <li class="interet rainbow"><%= inter.interest_name %></li> 
-                        <% }) %>
-                      </ul>
-                    </div>
-                  </div>
-
-        
-                <div class="bloc">
-                <h1 class="categorie-gauche rainbow">CERTIFICATES</h1>
-                <% certificates.forEach(certif => { %>
-                    <div class="element certif">
-                    <h4 class="titre-gauche rainbow certificates-title"><%= certif.certificates_title %></h4>
-                    <p class="texte-gauche rainbow certificates-desc"><%= certif.certificates_description %></p>
-                    </div>
-                <% }) %>
-                </div>
-
-                <!---
-                <div class="bloc">
-                    <h1 class="categorie-gauche rainbow"> CERTIFICATES </h1>
-                    <div class="element certif">
-                        <h4 class="titre-gauche rainbow certificates-title">CNIL</h4>
-                        <p class="texte-gauche rainbow certificates-desc"> Data protection awareness </p>
-                    </div>
-
-                    <div class="element certif">
-                        <h4 class="titre-gauche rainbow certificates-title"> ANSSI </h4>
-                        <p class="texte-gauche rainbow certificates-desc"> Introduction to cybersecurity knowledge</p>
-                    </div>
-
-                    <div class="element certif">
-                        <h4 class="titre-gauche rainbow certificates-title"> CLES B2</h4>
-                        <p class="texte-gauche rainbow certificates-desc"> English proficiency level </p>
-                    </div>
-                </div> -->
-            
-
-
-            </div>
-
+          
             <div id="colonne-droite">
 
                 <div class="bloc">
@@ -174,9 +141,6 @@
                           <% }) %>
                     </ul>
                 </div>
-
-
-                
             </div>
 
         </div>
