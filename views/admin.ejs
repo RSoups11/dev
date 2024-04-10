@@ -177,6 +177,63 @@
                 </div>
             </div>
         </form>
+
+
+
+        <form class="admin-form" action="/update-certificates" method="post">
+            <div class="accordion-toggle">
+                <h2>Certificates<span class="arrow">▼</span> </h2> 
+            </div>
+            <div class="accordion-content">
+
+                <% certificates.forEach(function(certi) { %>
+
+                    <input type="hidden" name="updatedCertificate[<%= certi.id %>][id]" value="<%= certi.id %>">
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= certi.certificates_title %>">Title:</label>
+                        <input type="text" id="certificate_title" name="updatedCertificate[<%= certi.id %>][title]" value="<%= certi.certificates_title %>" required>
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= certi.certificates_description %>">Description:</label>
+                        <textarea type="text" id="certificate_description" name="updatedCertificate[<%= certi.id %>][description]" rows="2" value="<%= certi.certificates_description %>" required> <%= certi.certificates_description %> </textarea>
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+
+                <% }); %>
+                
+                <div class="submit-button">
+                    <button type="button" id="add-certificates-button">Add New Certificates</button>
+                </div>
+
+
+                <div class="certificates-entry-template">
+                    <div class="changement">
+                        <label class="label-for" for="newCertificate">Title:</label>
+                        <input type="text" id="new_certificate_title" name="newCertificate[title]">
+                    </div>
+
+
+                    <div class="changement">
+                        <label class="label-for" for="newCertificate">Description:</label>
+                        <textarea id="new_certificate_description" name="newCertificate[description]" rows="2"></textarea>
+                    </div>
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+                </div>
+                
+                <div id="new-certificate"></div>
+
+                <div class="submit-button">
+                    <button type="submit">Update</button>
+                </div>
+            </div>
+        </form>
             
     </div>
     

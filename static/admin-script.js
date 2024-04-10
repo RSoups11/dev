@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var addButtonEducation = document.getElementById('add-education-button');
     var addButtonExperience = document.getElementById('add-experience-button');
+    var addButtonCertificates = document.getElementById('add-certificates-button');
     
     addButtonEducation.addEventListener('click', function() {
       let template = document.querySelector('.education-entry-template');
@@ -68,5 +69,30 @@ document.addEventListener('DOMContentLoaded', function() {
         
         console.log(newExperienceContainer); // This should show the element
         newExperienceContainer.appendChild(clone);
+      });
+
+
+      addButtonCertificates.addEventListener('click', function() {
+        let template = document.querySelector('.certificates-entry-template');
+        if (!template) {
+          console.error('Template not found.');
+          return;
+        }
+        
+        let clone = template.cloneNode(true);
+        clone.style.display = 'block';
+        clone.id = '';
+        clone.querySelector('input').required = true;
+        clone.querySelector('textarea').required = true;
+  
+  
+        var newCertificateContainer = document.getElementById('new-certificate');
+        if (!newCertificateContainer) {
+          console.error('The new-certificate element was not found.');
+          return;
+        }
+        
+        console.log(newCertificateContainer); // This should show the element
+        newCertificateContainer.appendChild(clone);
       });
   });

@@ -115,6 +115,37 @@ app.post('/update-experience', async (req, res) => {
   }
 });
 
+app.post('/update-certificates', async (req, res) => {
+  const { updatedCertificate, newCertificate } = req.body;
+  console.log(req.body);
+  try {
+    if (updatedCertificate && Array.isArray(updatedCertificate)) {
+      for (const certi of updatedCertificate) {
+        
+        const { id, title, description } = certi;
+        const certificatesToUpdate = await db.certificates.findByPk(id);
+        if (certificatesToUpdate) {
+          // Update the existing record
+          await certificatesToUpdate.update({ certificates_title: title, certificates_description: description });
+          console.log("updated to the database");
+        }
+      }
+    }
+
+    if (newCertificate) {
+      // title and description should always have the same length
+      for (let index = 1; index<newCertificate.title.length; index++) {
+        console.log("added to the database");
+        await db.certificates.create({ certificates_title: newCertificate.title[index], certificates_description: newCertificate.description[index] });
+      }
+    }
+
+    res.redirect('/admin');
+  } catch (error) {
+    console.error('Error updating experience:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 
   app.get('/', async (req, res) => {
