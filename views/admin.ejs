@@ -264,7 +264,7 @@
 
                 <div class="interest-entry-template">
                     <div class="changement">
-                        <label class="label-for" for="newInterest">Title:</label>
+                        <label class="label-for" for="newInterest">Name:</label>
                         <input type="text" id="new_interest_name" name="newInterest[name]">
                     </div>
 
@@ -330,6 +330,52 @@
                 </div>
                 
                 <div id="new-skills"></div>
+
+                <div class="submit-button">
+                    <button type="submit">Update</button>
+                </div>
+            </div>
+        </form>
+
+
+        <form class="admin-form" action="/update-expertise" method="post">
+            <div class="accordion-toggle">
+                <h2>Expertises<span class="arrow">▼</span> </h2> 
+            </div>
+            <div class="accordion-content">
+
+                <% expertise.forEach(function(expert) { %>
+
+                    <input type="hidden" name="updatedExpertise[<%= expert.id %>][id]" value="<%= expert.id %>">
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= expert.expertise_name %>">Name:</label>
+                        <input type="text" id="expertise_name" name="updatedExpertise[<%= expert.id %>][name]" value="<%= expert.expertise_name %>" required>
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+
+                <% }); %>
+                
+                <div class="submit-button">
+                    <button type="button" id="add-expertise-button">Add New Expertises</button>
+                </div>
+
+
+                <div class="expertise-entry-template">
+                    <div class="changement">
+                        <label class="label-for" for="newExpertise">Name:</label>
+                        <input type="text" id="new_expertise_name" name="newExpertise[name]">
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+                </div>
+                
+                <div id="new-expertise"></div>
 
                 <div class="submit-button">
                     <button type="submit">Update</button>

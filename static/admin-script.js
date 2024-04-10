@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var addButtonCertificates = document.getElementById('add-certificates-button');
     var addButtonInterest = document.getElementById('add-interest-button');
     var addButtonSkills = document.getElementById('add-skills-button');
+    var addButtonExpertise = document.getElementById('add-expertise-button');
 
     addButtonEducation.addEventListener('click', function() {
       let template = document.querySelector('.education-entry-template');
@@ -144,5 +145,28 @@ document.addEventListener('DOMContentLoaded', function() {
         newSkillContainer.appendChild(clone);
       });
 
+
+      addButtonExpertise.addEventListener('click', function() {
+        let template = document.querySelector('.expertise-entry-template');
+        if (!template) {
+          console.error('Template not found.');
+          return;
+        }
+        
+        let clone = template.cloneNode(true);
+        clone.style.display = 'block';
+        clone.id = '';
+        clone.querySelector('input').required = true;
+  
+  
+        var newExpertiseContainer = document.getElementById('new-expertise');
+        if (!newExpertiseContainer) {
+          console.error('The new-expertise element was not found.');
+          return;
+        }
+        
+        console.log(newExpertiseContainer); // This should show the element
+        newExpertiseContainer.appendChild(clone);
+      });
 
   });

@@ -205,11 +205,42 @@ app.post('/update-skills', async (req, res) => {
         await db.skills.create({ skills_name: newSkill.name[index], skill_level: newSkill.level[index] });
       }
     }
+  
+    res.redirect('/admin');
+  } catch (error) {
+    console.error('Error updating expertise:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.post('/update-expertise', async (req, res) => {
+  const { updatedExpertise, newExpertise } = req.body;
+  console.log(req.body);
+  try {
+    if (updatedExpertise && Array.isArray(updatedExpertise)) {
+      for (const expert of updatedExpertise) {
+        
+        const { id, name } = expert;
+        const expertiseToUpdate = await db.expertise.findByPk(id);
+        if (expertiseToUpdate) {
+          // Update the existing record
+          await expertiseToUpdate.update({ expertise_name: name });
+          console.log("updated to the database");
+        }
+      }
+    }
+
+    if (newExpertise) {
+      for (let index = 1; index<newExpertise.name.length; index++) {
+        console.log("added to the database");
+        await db.expertise.create({ expertise_name: newExpertise.name[index] });
+      }
+    }
 
   
     res.redirect('/admin');
   } catch (error) {
-    console.error('Error updating experience:', error);
+    console.error('Error updating expertise:', error);
     res.status(500).send('Internal Server Error');
   }
 });
