@@ -261,9 +261,9 @@ ul {
 
 #contact {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .texte-bas {
@@ -275,6 +275,7 @@ ul {
 
 .texte-bas.rainbow {
   padding: 8px;
+  padding-left: 8px;
   margin: 0 5px;
   display: inline-block;
 }
