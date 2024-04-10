@@ -234,7 +234,108 @@
                 </div>
             </div>
         </form>
-            
+        
+
+        <form class="admin-form" action="/update-interest" method="post">
+            <div class="accordion-toggle">
+                <h2>Interest<span class="arrow">▼</span> </h2> 
+            </div>
+            <div class="accordion-content">
+
+                <% interest.forEach(function(inter) { %>
+
+                    <input type="hidden" name="updatedInterest[<%= inter.id %>][id]" value="<%= inter.id %>">
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= inter.interest_name %>">Name:</label>
+                        <input type="text" id="interest_name" name="updatedInterest[<%= inter.id %>][name]" value="<%= inter.interest_name %>" required>
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+
+                <% }); %>
+                
+                <div class="submit-button">
+                    <button type="button" id="add-interest-button">Add New Interest</button>
+                </div>
+
+
+                <div class="interest-entry-template">
+                    <div class="changement">
+                        <label class="label-for" for="newInterest">Title:</label>
+                        <input type="text" id="new_interest_name" name="newInterest[name]">
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+                </div>
+                
+                <div id="new-interest"></div>
+
+                <div class="submit-button">
+                    <button type="submit">Update</button>
+                </div>
+            </div>
+        </form>
+
+
+        <form class="admin-form" action="/update-skills" method="post">
+            <div class="accordion-toggle">
+                <h2>Skills<span class="arrow">▼</span> </h2> 
+            </div>
+            <div class="accordion-content">
+
+                <% skills.forEach(function(skill) { %>
+
+                    <input type="hidden" name="updatedSkills[<%= skill.id %>][id]" value="<%= skill.id %>">
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= skill.skills_name %>">Name:</label>
+                        <input type="text" id="skills_name" name="updatedSkills[<%= skill.id %>][name]" value="<%= skill.skills_name %>" required>
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="<%= skill.skill_level %>">Level (1-5):</label>
+                        <input type="number" min="1" max="5" step="1" id="skill_level" name="updatedSkills[<%= skill.id %>][level]" value="<%= skill.skill_level %>" required>
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+
+                <% }); %>
+                
+                <div class="submit-button">
+                    <button type="button" id="add-skills-button">Add New Skills</button>
+                </div>
+
+
+                <div class="skills-entry-template">
+                    <div class="changement">
+                        <label class="label-for" for="newSkill">Name:</label>
+                        <input type="text" id="new_skill_name" name="newSkill[name]">
+                    </div>
+
+                    <div class="changement">
+                        <label class="label-for" for="newSkill">Level (1-5):</label>
+                        <input type="number" min="1" max="5" step="1" id="new_skill_level" name="newSkill[level]">
+                    </div>
+
+                    <br>
+                    <span class="grey-line"></span>
+                    <br>
+                </div>
+                
+                <div id="new-skills"></div>
+
+                <div class="submit-button">
+                    <button type="submit">Update</button>
+                </div>
+            </div>
+        </form>
     </div>
     
 </body>

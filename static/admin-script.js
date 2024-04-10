@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var addButtonEducation = document.getElementById('add-education-button');
     var addButtonExperience = document.getElementById('add-experience-button');
     var addButtonCertificates = document.getElementById('add-certificates-button');
-    
+    var addButtonInterest = document.getElementById('add-interest-button');
+    var addButtonSkills = document.getElementById('add-skills-button');
+
     addButtonEducation.addEventListener('click', function() {
       let template = document.querySelector('.education-entry-template');
       if (!template) {
@@ -95,4 +97,52 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(newCertificateContainer); // This should show the element
         newCertificateContainer.appendChild(clone);
       });
+
+      addButtonInterest.addEventListener('click', function() {
+        let template = document.querySelector('.interest-entry-template');
+        if (!template) {
+          console.error('Template not found.');
+          return;
+        }
+        
+        let clone = template.cloneNode(true);
+        clone.style.display = 'block';
+        clone.id = '';
+        clone.querySelector('input').required = true;
+  
+  
+        var newInterestContainer = document.getElementById('new-interest');
+        if (!newInterestContainer) {
+          console.error('The new-interest element was not found.');
+          return;
+        }
+        
+        console.log(newInterestContainer); // This should show the element
+        newInterestContainer.appendChild(clone);
+      });
+
+      addButtonSkills.addEventListener('click', function() {
+        let template = document.querySelector('.skills-entry-template');
+        if (!template) {
+          console.error('Template not found.');
+          return;
+        }
+        
+        let clone = template.cloneNode(true);
+        clone.style.display = 'block';
+        clone.id = '';
+        clone.querySelector('input').required = true;
+  
+  
+        var newSkillContainer = document.getElementById('new-skills');
+        if (!newSkillContainer) {
+          console.error('The new-interest element was not found.');
+          return;
+        }
+        
+        console.log(newSkillContainer); // This should show the element
+        newSkillContainer.appendChild(clone);
+      });
+
+
   });

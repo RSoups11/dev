@@ -148,6 +148,73 @@ app.post('/update-certificates', async (req, res) => {
 });
 
 
+app.post('/update-interest', async (req, res) => {
+  const { updatedInterest, newInterest } = req.body;
+  console.log(req.body);
+  try {
+    if (updatedInterest && Array.isArray(updatedInterest)) {
+      for (const inter of updatedInterest) {
+        
+        const { id, name } = inter;
+        const interestToUpdate = await db.interest.findByPk(id);
+        if (interestToUpdate) {
+          // Update the existing record
+          await interestToUpdate.update({ interest_name: name });
+          console.log("updated to the database");
+        }
+      }
+    }
+
+    if (newInterest) {
+      for (let index = 1; index<newInterest.name.length; index++) {
+        console.log("added to the database");
+        await db.interest.create({ interest_name: newInterest.name[index] });
+      }
+    }
+
+  
+    res.redirect('/admin');
+  } catch (error) {
+    console.error('Error updating experience:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+
+app.post('/update-skills', async (req, res) => {
+  const { updatedSkills, newSkill } = req.body;
+  console.log(req.body);
+  try {
+    if (updatedSkills && Array.isArray(updatedSkills)) {
+      for (const skill of updatedSkills) {
+        
+        const { id, name, level } = skill;
+        const skillsToUpdate = await db.skills.findByPk(id);
+        if (skillsToUpdate) {
+          // Update the existing record
+          await skillsToUpdate.update({ skills_name: name, skill_level: level });
+          console.log("updated to the database");
+        }
+      }
+    }
+
+    if (newSkill) {
+      for (let index = 1; index<newSkill.name.length; index++) {
+        console.log("added to the database");
+        await db.skills.create({ skills_name: newSkill.name[index], skill_level: newSkill.level[index] });
+      }
+    }
+
+  
+    res.redirect('/admin');
+  } catch (error) {
+    console.error('Error updating experience:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
   app.get('/', async (req, res) => {
     try {
       // Récupération des données de la base de données
@@ -156,7 +223,7 @@ app.post('/update-certificates', async (req, res) => {
       const expertise = await db.expertise.findAll();
       const interest = await db.interest.findAll();
       const certificates = await db.certificates.findAll();
-      const skills = await db.skills.findAll();
+      const skills = await db.skills.findAll({ order : [['skill_level', 'DESC']]});
       const education = await db.education.findAll({ order : [['id', 'DESC']] });
   
       // Rendu de la page en utilisant les données récupérées
