@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="/styles.css">
     <script src="/admin-script.js"></script>
 
-<body>
-
+<body class="administrator">
 
     <div class="admin-container">
 
@@ -418,67 +417,70 @@
             </div>
 
             <div class="accordion-content">
+                <% if (style) { %>
 
-                <div class="changement">
-                    <label class="label-for" for="label-for">Background Color:</label>
-                    <input class="change-style-input" type="color" name="bgColor" value="#ffffff">
-                </div>
+                    <div class="changement">
+                        <label class="label-for" for="label-for">Background Color:</label>
+                        <input class="change-style-input" type="color" name="bgColor" value="<%= style.bg_color%>">
+                    </div>
 
-                <div class="changement">
-                    <label class="label-for" for="label-for">Texte Color:</label>
-                    <input class="change-style-input" type="color" name="txtColor" value="#ffffff">
-                </div>
+                    <div class="changement">
+                        <label class="label-for" for="label-for">Text Color:</label>
+                        <input class="change-style-input" type="color" name="txtColor" value="<%= style.text_color%>">
+                    </div>
 
-                <div class="changement">
-                    <label class="label-for" for="label-for">Special Color:</label>
-                    <input class="change-style-input" type="color" name="specialColor" value="#ffffff">
-                </div>
+                    <div class="changement">
+                        <label class="label-for" for="label-for">Special Color:</label>
+                        <input class="change-style-input" type="color" name="specialColor" value="<%= style.special_color%>">
+                    </div>
 
-                <div class="changement">
-                    <label class="label-for" for="label-for">H1 Color:</label>
-                    <input class="change-style-input" type="color" name="h1Color" value="#ffffff">
-                </div>
+                    <div class="changement">
+                        <label class="label-for" for="label-for">H1 Color:</label>
+                        <input class="change-style-input" type="color" name="h1Color" value="<%= style.h1_color%>">
+                    </div>
 
-                <div class="changement">
-                    <label class="label-for" for="label-for">H3 Color:</label>
-                    <input class="change-style-input" type="color" name="h3Color" value="#ffffff">
-                </div>
+                    <div class="changement">
+                        <label class="label-for" for="label-for">H3 Color:</label>
+                        <input class="change-style-input" type="color" name="h3Color" value="<%= style.h3_color%>">
+                    </div>
 
-                <div class="changement">
-                    <label class="label-for" for="label-for">H4 Color:</label>
-                    <input class="change-style-input" type="color" name="h4Color" value="#ffffff">
-                </div>
+                    <div class="changement">
+                        <label class="label-for" for="label-for">H4 Color:</label>
+                        <input class="change-style-input" type="color" name="h4Color" value="<%= style.h4_color%>">
+                    </div>
 
-                <div class="changement">
-                    <label class="label-for" for="label-for">Button Color:</label>
-                    <input class="change-style-input" type="color" name="buttonColor" value="#ffffff">
-                </div>
+                    <div class="changement">
+                        <label class="label-for" for="label-for">Button Color:</label>
+                        <input class="change-style-input" type="color" name="buttonColor" value="<%= style.button_color%>">
+                    </div>
 
-                <div class="changement">
-                    <label class="label-for" for="label-for">Title Font:</label>
-                    <select id="title-font-family" class="change-font" name="titleFont">
-                        <option value="Arial">Arial</option>
-                        <option value="Verdana">Verdana</option>
-                        <option value="Helvetica">Helvetica</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Courier New">Courier New</option>
-                        <option value="Lucida">Lucida</option>
-                    </select>
-                </div>
+                    <div class="changement">
+                        <label class="label-for" for="label-for">Title Font:</label>
+                        <select id="title-font-family" class="change-font" name="titleFont">
+                            <option value="Arial" Arial <% if (style.title_font === 'Arial') { %>selected<% } %> >Arial</option></option>
+                            <option value="Verdana" Verdana <% if (style.title_font === 'Verdana') { %>selected<% } %>>Verdana</option>
+                            <option value="Helvetica"Helvetica <% if (style.title_font === 'Helvetica') { %>selected<% } %>>Helvetica</option>
+                            <option value="Times New Roman"Times New Roman <% if (style.title_font === 'Times New Roman') { %>selected<% } %>>Times New Roman</option>
+                            <option value="Georgia"Georgia <% if (style.title_font === 'Georgia') { %>selected<% } %>>Georgia</option>
+                            <option value="Courier New"Courier New <% if (style.title_font === 'Courier New') { %>selected<% } %>>Courier New</option>
+                            <option value="Lucida"Lucida <% if (style.title_font === 'Lucida') { %>selected<% } %>>Lucida</option>
+                        </select>
+                    </div>
 
-                <div class="changement">
-                    <label class="label-for" for="label-for">Text Font:</label>
-                    <select class="change-font" name="textFont">
-                        <option value="Arial">Arial</option>
-                        <option value="Verdana">Verdana</option>
-                        <option value="Helvetica">Helvetica</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Courier New">Courier New</option>
-                        <option value="Lucida">Lucida</option>
-                    </select>
-                </div>
+                    <div class="changement">
+                        <label class="label-for" for="label-for">Text Font:</label>
+                        <select id="text-font-family" class="change-font" name="textFont">
+                            <option value="Arial" Arial <% if (style.text_font === 'Arial') { %>selected<% } %> >Arial</option></option>
+                            <option value="Verdana" Verdana <% if (style.text_font === 'Verdana') { %>selected<% } %>>Verdana</option>
+                            <option value="Helvetica"Helvetica <% if (style.text_font === 'Helvetica') { %>selected<% } %>>Helvetica</option>
+                            <option value="Times New Roman"Times New Roman <% if (style.text_font === 'Times New Roman') { %>selected<% } %>>Times New Roman</option>
+                            <option value="Georgia"Georgia <% if (style.text_font === 'Georgia') { %>selected<% } %>>Georgia</option>
+                            <option value="Courier New"Courier New <% if (style.text_font === 'Courier New') { %>selected<% } %>>Courier New</option>
+                            <option value="Lucida"Lucida <% if (style.text_font === 'Lucida') { %>selected<% } %>>Lucida</option>
+                        </select>
+                    </div>
+
+                <% }; %>
 
                 <div class="submit-button">
                     <button type="submit">Update</button>

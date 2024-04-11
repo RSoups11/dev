@@ -38,13 +38,18 @@ img {
     padding-right: 5px;
     border: none;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.9568627451);
+    background-color: #000000;
     border: 2px solid #564d4d;
-    color: white;
+    color: #ffffff;
   }
 }
 body {
-  background-color: rgba(0, 0, 0, 0.9568627451);
+  background-color: #000000;
+  font-size: 16px;
+}
+
+.administrator {
+  background-color: black;
   font-size: 16px;
 }
 
@@ -100,7 +105,7 @@ body {
 }
 
 .disponibilite {
-  color: white;
+  color: #ffffff;
   margin-bottom: 2%;
 }
 
@@ -109,7 +114,7 @@ body {
 }
 
 #nom {
-  color: white;
+  color: #ffffff;
 }
 
 #container2 {
@@ -131,13 +136,13 @@ body {
 
 #colonne-gauche h1 {
   font-family: Lucida;
-  color: white;
+  color: #ffffff;
   font-size: 25px;
 }
 
 #colonne-droite h1 {
   font-family: Lucida;
-  color: white;
+  color: #ffffff;
   font-size: 25px;
 }
 
@@ -161,7 +166,7 @@ body {
 
 .texte-gauche {
   text-align: right;
-  color: white;
+  color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
   margin-top: 0;
@@ -169,7 +174,7 @@ body {
 }
 
 .texte-droite {
-  color: white;
+  color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
   margin-top: 0;
@@ -178,7 +183,7 @@ body {
 h3 {
   font-size: 15px;
   font-family: Helvetica;
-  color: white;
+  color: #ffffff;
   margin-bottom: 0;
   margin-top: 2%;
   display: inline-block;
@@ -187,7 +192,7 @@ h3 {
 h4 {
   font-size: 15px;
   font-family: Helvetica;
-  color: red;
+  color: #ff0000;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -202,11 +207,11 @@ h4 {
 }
 
 .checked {
-  color: red;
+  color: #ff0000;
 }
 
 .interet {
-  color: white;
+  color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
   text-align: right;
@@ -216,7 +221,7 @@ h4 {
 }
 
 .expertise {
-  color: white;
+  color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
   text-align: left;
@@ -226,7 +231,7 @@ h4 {
 }
 
 #esilien {
-  color: white;
+  color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
   float: right;
@@ -245,7 +250,7 @@ ul {
 .categorie-bas {
   text-align: center;
   font-size: 25px;
-  color: white;
+  color: #ffffff;
 }
 
 #contact {
@@ -257,7 +262,7 @@ ul {
 
 .texte-bas {
   font-family: Helvetica;
-  color: red;
+  color: #ff0000;
   font-size: 14px;
 }
 
@@ -289,7 +294,7 @@ ul {
 }
 
 .button-lecture {
-  background-color: white;
+  background-color: #ffffff;
   font-family: Helvetica;
   margin-right: 1%;
 }
@@ -301,7 +306,7 @@ ul {
 .button-plus-infos {
   background-color: #7f7f7f;
   font-family: Helvetica;
-  color: white;
+  color: #ffffff;
 }
 
 .button-plus-infos:hover {
@@ -374,7 +379,7 @@ ul {
 }
 
 .login-container h1 {
-  color: white;
+  color: #ffffff;
   font-size: 1.5em;
 }
 
@@ -392,7 +397,7 @@ ul {
   border-radius: 5px;
   background-color: transparent;
   border: 2px solid #564d4d;
-  color: white;
+  color: #ffffff;
 }
 
 .login-form button {
@@ -401,8 +406,8 @@ ul {
   margin-top: 2%;
   border: none;
   border-radius: 5px;
-  background-color: red;
-  color: white;
+  background-color: #ff0000;
+  color: #ffffff;
   font-size: 16px;
   cursor: pointer;
 }
@@ -412,7 +417,7 @@ ul {
 }
 
 #admin-titre {
-  color: white;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -446,7 +451,7 @@ ul {
 }
 
 .label-for {
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   font-size: 18px;
 }
@@ -459,7 +464,7 @@ ul {
   border-radius: 5px;
   background-color: transparent;
   border: 2px solid #564d4d;
-  color: white;
+  color: #ffffff;
 }
 
 .change-input {
@@ -471,7 +476,7 @@ ul {
   border-radius: 5px;
   background-color: transparent;
   border: 2px solid #564d4d;
-  color: white;
+  color: #ffffff;
 }
 
 .change-style-input {
@@ -491,11 +496,11 @@ ul {
   border-radius: 5px;
   border: 2px solid #564d4d;
   background-color: transparent;
-  color: white;
+  color: #ffffff;
 }
 
 .change-font option {
-  background-color: rgba(0, 0, 0, 0.9568627451);
+  background-color: black;
 }
 
 .admin-form {
@@ -520,14 +525,14 @@ ul {
   border: none;
   border-radius: 5px;
   background-color: red;
-  color: white;
+  color: #ffffff;
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 2%;
 }
 
 .accordion-toggle h2 {
-  color: white;
+  color: #ffffff;
 }
 
 .submit-button {
@@ -540,4 +545,4 @@ ul {
 
 .education-entry-template, .experience-entry-template, .certificates-entry-template, .interest-entry-template, .skills-entry-template, .expertise-entry-template {
   display: none;
-}/*# sourceMappingURL=styles.css.map */
+}

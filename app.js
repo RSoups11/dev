@@ -4,12 +4,12 @@ const app = express();
 const port = 80; 
 const db = require('./static/models/database.js');
 const path = require('path');
+const sass = require('sass');
+const fs = require('fs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('static'));
 app.set('view engine', 'ejs');
-
-
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
@@ -21,7 +21,69 @@ app.post('/login', async (req, res) => {
       res.send('Failed to authenticate');
     }
   });
+  
 
+app.post('/update-sass', async (req, res) => {
+  const { bgColor, txtColor, specialColor, h1Color, h3Color, h4Color, buttonColor, titleFont, textFont } = req.body;
+  const sassFilePath = path.join(__dirname, 'static', 'styles.scss');
+  const cssFilePath = path.join(__dirname, 'static', 'styles.css');
+  console.log(req.body);
+  try {
+    const styleToUpdate = await db.styles.findOne({ where: { id: 2 } });
+    
+    if (styleToUpdate) {
+      // Update the existing record
+      await styleToUpdate.update({
+        bg_color: bgColor,
+        text_color: txtColor,
+        special_color: specialColor,
+        h1_color: h1Color,
+        h3_color: h3Color,
+        h4_color: h4Color,
+        button_color: buttonColor,
+        title_font: titleFont,
+        text_font: textFont
+
+      });
+      
+      const updatedStyles = await db.styles.findOne({ where: { id: 2 } });
+
+    const newSass = 
+    `
+    $bg-color: ${updatedStyles.bg_color};
+    $text-color: ${updatedStyles.text_color};
+    $special-color: ${updatedStyles.special_color};
+    $h1-color: ${updatedStyles.h1_color};
+    $h3-color: ${updatedStyles.h3_color};
+    $h4-color: ${updatedStyles.h4_color};
+    $button-color: ${updatedStyles.button_color};
+    $title-font: ${updatedStyles.title_font};
+    $text-font: ${updatedStyles.text_font};
+    `;
+
+    const sassVariablesPartialPath = path.join(__dirname, 'static', '_dynamicsVariables.scss');
+
+    // Write the updated styles to the variables partial
+    fs.writeFileSync(sassVariablesPartialPath, newSass);
+
+    try {
+      const result = sass.compile(sassFilePath, { style: "expanded" });
+      fs.writeFileSync(cssFilePath, result.css);
+      console.log('SASS compiled successfully');
+    } catch (error) {
+      console.error('Failed to compile SASS', error);
+    }
+
+    res.redirect('/admin'); // Redirect back to the admin page
+    } else {
+      res.status(404).send('Styles not found');
+    }
+  } catch (error) {
+    console.error('Error updating info:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+  
 app.post('/update-info', async (req, res) => {
   const { position, disponibilite, synopsis, email, number, website } = req.body;
 
@@ -281,9 +343,10 @@ app.get('/admin', async (req, res) => {
     const certificates = await db.certificates.findAll();
     const skills = await db.skills.findAll();
     const education = await db.education.findAll();
+    const style = await db.styles.findOne({ where: { id: 2 } });
 
     // Render the admin page with the fetched data
-    res.render('admin.ejs', { info, experience, expertise, interest, skills, certificates, education });
+    res.render('admin.ejs', { info, experience, expertise, interest, skills, certificates, education, style });
   } catch (error) {
     console.error('Error:', error);
     res.status(500).send('Internal Server Error');
@@ -457,3 +520,33 @@ storeCVData();
 insertEducationData();*/
 
 //insertinfo();
+
+
+
+/*
+Insert base style
+
+const styleData = {
+  bg_color: 'black', 
+  special_color: '#564d4d',
+  text_color: 'white', 
+  h1_color: 'white',
+  h3_color: 'white',
+  h4_color: 'red',
+  button_color: 'red',
+  title_font: 'Lucida',
+  text_font: 'Helvetica',
+};
+
+// Function to insert into the database
+async function insertStyleVariables() {
+  try {
+    await db.styles.create(styleData);
+    console.log('Style variables were successfully inserted into the database.');
+  } catch (error) {
+    console.error('Error inserting style variables:', error);
+  }
+}
+
+insertStyleVariables();
+*/
