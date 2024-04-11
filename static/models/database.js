@@ -14,5 +14,6 @@ db.expertise = require('./expertise.model.js')(sequelize, Sequelize);
 db.interest = require('./interest.model.js')(sequelize, Sequelize);
 db.skills = require('./skills.model.js')(sequelize, Sequelize);
 db.education = require('./education.model.js')(sequelize, Sequelize);
+db.styles = require('./styles.model.js')(sequelize, Sequelize);
 
 module.exports = db;
