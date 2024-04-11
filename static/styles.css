@@ -75,7 +75,7 @@ body {
   width: 5%;
 }
 
-#top10 p {
+.top10txt {
   margin-left: 5px;
   color: #60a471;
   font-family: Helvetica;
@@ -85,12 +85,11 @@ body {
 
 #en-tete h1 {
   color: #564d4d;
-  font-family: Helvetica;
+  font-family: Lucida;
   margin-bottom: 0;
 }
 
-#en-tete, p {
-  color: #564d4d;
+#en-tete p {
   font-family: Helvetica;
   margin-top: 0;
 }
@@ -102,8 +101,11 @@ body {
 
 .disponibilite {
   color: white;
-  font-family: Helvetica;
   margin-bottom: 2%;
+}
+
+.position {
+  color: #564d4d;
 }
 
 #nom {
@@ -127,16 +129,24 @@ body {
   padding-top: 0;
 }
 
-#colonne-gauche {
-  color: white;
-  margin-right: 2%;
+#colonne-gauche h1 {
   font-family: Lucida;
+  color: white;
+  font-size: 25px;
+}
+
+#colonne-droite h1 {
+  font-family: Lucida;
+  color: white;
+  font-size: 25px;
+}
+
+#colonne-gauche {
+  margin-right: 2%;
 }
 
 #colonne-droite {
-  color: white;
   margin-left: 2%;
-  font-family: Lucida;
 }
 
 .categorie-gauche {
@@ -170,6 +180,7 @@ body {
 h3 {
   font-size: 15px;
   font-family: Helvetica;
+  color: white;
   margin-bottom: 0;
   margin-top: 2%;
   display: inline-block;
@@ -308,7 +319,7 @@ ul {
   display: flex;
   gap: 5px;
   flex-direction: column;
-  align-items: start;
+  justify-content: flex-start;
 }
 
 #button-container a {
