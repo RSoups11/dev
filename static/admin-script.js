@@ -170,3 +170,16 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
   });
+
+  /*
+  document.getElementById('sass-variables-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var formData = new FormData(event.target);
+    var variables = {};
+    formData.forEach(function(value, key) {
+      variables[key] = value;
+    });
+    // Now `variables` contains the updated values from the form
+    updateSassVariables(variables);
+  });
+  */

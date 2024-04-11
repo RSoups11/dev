@@ -523,7 +523,7 @@ ul {
   font-size: 18px;
 }
 
-.accordion-content input, textarea {
+.accordion-content textarea {
   width: 100%;
   padding: 15px;
   margin-top: 2%;
@@ -532,6 +532,43 @@ ul {
   background-color : transparent;
   border: 2px solid $special-color;
   color: $text-color;
+}
+
+.change-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  margin-top: 2%;
+  border: none;
+  border-radius: 5px;
+  background-color : transparent;
+  border: 2px solid $special-color;
+  color: $text-color;
+}
+
+.change-style-input {
+  width: 100%;
+  //padding: 15px;
+  margin-top: 2%;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid $special-color;
+  background-color : transparent;
+}
+
+.change-font {
+  width: 100%;
+  padding: 15px;
+  margin-top: 2%;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid $special-color;
+  background-color : transparent;
+  color : $text-color;
+}
+
+.change-font option {
+  background-color: $bg-color;
 }
 
 .admin-form {
@@ -563,7 +600,9 @@ ul {
 .submit-button {
   width: 100%;
   display: flex;
-  padding-left: 4%;
+  display: block; /* Makes the button a block-level element */
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .education-entry-template, .experience-entry-template, .certificates-entry-template, .interest-entry-template, .skills-entry-template, .expertise-entry-template {

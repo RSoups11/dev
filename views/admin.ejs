@@ -8,173 +8,192 @@
     <script src="/admin-script.js"></script>
 
 <body>
-    
-    
+
+
     <div class="admin-container">
 
         <h1 id="admin-titre">Administration</h1>
         <br>
         <form class="admin-form" action="/update-info" method="post">
             <div class="accordion-toggle">
-                <h2>Infos<span class="arrow">▼</span> </h2> 
+                <h2>Infos<span class="arrow">▼</span> </h2>
             </div>
             <div class="accordion-content">
                 <% info.forEach(function(item) { %>
                     <div class="changement">
                         <label class="label-for" for="disponibilite_<%= item.disponibilite %>">Disponibility:</label>
-                        <input type="text" id="disponibilte_info" name="disponibilite" value="<%= item.disponibilite%>" required>
+                        <input class="change-input" type="text" id="disponibilte_info" name="disponibilite"
+                            value="<%= item.disponibilite%>" required>
                     </div>
 
                     <div class="changement">
                         <label class="label-for" for="position_<%= item.position %>">Position:</label>
-                        <input type="text" id="position_info" name="position" value="<%= item.position %>" required>
+                        <input class="change-input" type="text" id="position_info" name="position"
+                            value="<%= item.position %>" required>
                     </div>
 
                     <div class="changement">
                         <label class="label-for" for="synopsis_<%= item.synopsis %>">Synopsis:</label>
-                        <textarea type="text" id="synopsis_info" name="synopsis" rows="4" value="<%= item.synopsis %>" required> <%= item.synopsis %> </textarea>
+                        <textarea type="text" class="change-input" id="synopsis_info" name="synopsis" rows="4" value="<%= item.synopsis %>"
+                            required> <%= item.synopsis %> </textarea>
                     </div>
-                    
+
                     <div class="changement">
                         <label class="label-for" for="email_<%= item.email %>">E-mail:</label>
-                        <input type="text" id="email_info" name="email" value="<%= item.email %>" required>
+                        <input class="change-input" type="text" id="email_info" name="email" value="<%= item.email %>"
+                            required>
                     </div>
 
                     <div class="changement">
                         <label class="label-for" for="number_<%= item.number %>">Phone number:</label>
-                        <input type="text" id="number_info" name="number" value="<%= item.number %>" required>
+                        <input class="change-input" type="text" id="number_info" name="number"
+                            value="<%= item.number %>" required>
                     </div>
 
                     <div class="changement">
                         <label class="label-for" for="website_<%= item.website %>">Website:</label>
-                        <input type="text" id="website_info" name="website" value="<%= item.website %>" required>
+                        <input class="change-input" type="text" id="website_info" name="website"
+                            value="<%= item.website %>" required>
                     </div>
 
-                <% }); %>
-                <div class="submit-button">
-                    <button type="submit">Update</button>
-                </div>
+                    <% }); %>
+                        <div class="submit-button">
+                            <button type="submit">Update</button>
+                        </div>
             </div>
 
         </form>
 
         <form class="admin-form" action="/update-education" method="post">
             <div class="accordion-toggle">
-                <h2>Education<span class="arrow">▼</span> </h2> 
+                <h2>Education<span class="arrow">▼</span> </h2>
             </div>
             <div class="accordion-content">
 
 
                 <% education.forEach(function(edu) { %>
 
-                    <input type="hidden" name="updatedEducation[<%= edu.id %>][id]" value="<%= edu.id %>">
+                    <input class="change-input" type="hidden" name="updatedEducation[<%= edu.id %>][id]"
+                        value="<%= edu.id %>">
 
                     <div class="changement">
                         <label class="label-for" for="<%= edu.education_title %>">Title:</label>
-                        <input type="text" id="education_title" name="updatedEducation[<%= edu.id %>][title]" value="<%= edu.education_title %>" required>
+                        <input class="change-input" type="text" id="education_title"
+                            name="updatedEducation[<%= edu.id %>][title]" value="<%= edu.education_title %>" required>
                     </div>
 
                     <div class="changement">
                         <label class="label-for" for="<%= edu.education_description %>">Description:</label>
-                        <textarea type="text" id="education_description" name="updatedEducation[<%= edu.id %>][description]" rows="2" value="<%= edu.education_description %>" required> <%= edu.education_description %> </textarea>
+                        <textarea type="text" class="change-input" id="education_description" name="updatedEducation[<%= edu.id %>][description]" rows="2" value="<%= edu.education_description %>" required>
+                             <%= edu.education_description %> 
+                        </textarea>
                     </div>
 
                     <br>
                     <span class="grey-line"></span>
                     <br>
 
-                <% }); %>
-                
-                <div class="submit-button">
-                    <button type="button" id="add-education-button">Add New Education</button>
-                </div>
+                    <% }); %>
 
-                <div class="education-entry-template">
-                    <div class="changement">
-                        <label class="label-for" for="newEducation">Title:</label>
-                        <input type="text" id="new_education_title" name="newEducation[title]">
-                    </div>
+                        <div class="submit-button">
+                            <button type="button" id="add-education-button">Add New Education</button>
+                        </div>
 
-                    <div class="changement">
-                        <label class="label-for" for="newEducation">Description:</label>
-                        <textarea id="new_education_description" name="newEducation[description]" rows="2"></textarea>
-                    </div>
+                        <div class="education-entry-template">
+                            <div class="changement">
+                                <label class="label-for" for="newEducation">Title:</label>
+                                <input class="change-input" type="text" id="new_education_title"
+                                    name="newEducation[title]">
+                            </div>
 
-                    <br>
-                    <span class="grey-line"></span>
-                    <br>
-                </div>
+                            <div class="changement">
+                                <label class="label-for" for="newEducation">Description:</label>
+                                <textarea id="new_education_description" class="change-input" name="newEducation[description]" rows="2"></textarea>
+                            </div>
 
-                
-                <div id="new-education"></div>
+                            <br>
+                            <span class="grey-line"></span>
+                            <br>
+                        </div>
 
-                <div class="submit-button">
-                    <button type="submit">Update</button>
-                </div>
+
+                        <div id="new-education"></div>
+
+                        <div class="submit-button">
+                            <button type="submit">Update</button>
+                        </div>
             </div>
         </form>
 
         <form class="admin-form" action="/update-experience" method="post">
             <div class="accordion-toggle">
-                <h2>Experiences<span class="arrow">▼</span> </h2> 
+                <h2>Experiences<span class="arrow">▼</span> </h2>
             </div>
             <div class="accordion-content">
 
                 <% experience.forEach(function(exp) { %>
 
-                    <input type="hidden" name="updatedExperience[<%= exp.id %>][id]" value="<%= exp.id %>">
+                    <input class="change-input" type="hidden" name="updatedExperience[<%= exp.id %>][id]"
+                        value="<%= exp.id %>">
 
                     <div class="changement">
                         <label class="label-for" for="<%= exp.title %>">Title:</label>
-                        <input type="text" id="experience_title" name="updatedExperience[<%= exp.id %>][title]" value="<%= exp.title %>" required>
+                        <input class="change-input" type="text" id="experience_title"
+                            name="updatedExperience[<%= exp.id %>][title]" value="<%= exp.title %>" required>
                     </div>
 
                     <div class="changement">
                         <label class="label-for" for="<%= exp.location %>">Location:</label>
-                        <textarea type="text" id="experience_location" name="updatedExperience[<%= exp.id %>][location]" rows="2" value="<%= exp.location %>" required> <%= exp.location %> </textarea>
+                        <input type="text" class="change-input" id="experience_location" name="updatedExperience[<%= exp.id %>][location]"
+                            value="<%= exp.location %>" required>
                     </div>
 
                     <div class="changement">
                         <label class="label-for" for="<%= exp.description %>">Description:</label>
-                        <textarea type="text" id="experience_description" name="updatedExperience[<%= exp.id %>][description]" rows="2" value="<%= exp.description %>" required> <%= exp.description %> </textarea>
+                        <textarea type="text" class="change-input" id="experience_description"
+                            name="updatedExperience[<%= exp.id %>][description]" rows="2" value="<%= exp.description %>"
+                            required> <%= exp.description %> </textarea>
                     </div>
 
                     <br>
                     <span class="grey-line"></span>
                     <br>
 
-                <% }); %>
-                
-                <div class="submit-button">
-                    <button type="button" id="add-experience-button">Add New Experiences</button>
-                </div>
+                    <% }); %>
+
+                        <div class="submit-button">
+                            <button type="button" id="add-experience-button">Add New Experiences</button>
+                        </div>
 
 
-                <div class="experience-entry-template">
-                    <div class="changement">
-                        <label class="label-for" for="newExperience">Title:</label>
-                        <input type="text" id="new_experience_title" name="newExperience[title]">
-                    </div>
+                        <div class="experience-entry-template">
+                            <div class="changement">
+                                <label class="label-for" for="newExperience">Title:</label>
+                                <input class="change-input" type="text" id="new_experience_title"
+                                    name="newExperience[title]">
+                            </div>
 
-                    <div class="changement">
-                        <label class="label-for" for="newExperience">Location:</label>
-                        <input type="text" id="new_experience_location" name="newExperience[location]">
-                    </div>
+                            <div class="changement">
+                                <label class="label-for" for="newExperience">Location:</label>
+                                <input class="change-input" type="text" id="new_experience_location"
+                                    name="newExperience[location]">
+                            </div>
 
-                    <div class="changement">
-                        <label class="label-for" for="newExperience">Description:</label>
-                        <textarea id="new_experience_description" name="newExperience[description]" rows="2"></textarea>
-                    </div>
-                    <br>
-                    <span class="grey-line"></span>
-                    <br>
-                </div>
-                
-                <div id="new-experience"></div>
+                            <div class="changement">
+                                <label class="label-for" for="newExperience">Description:</label>
+                                <textarea id="new_experience_description" class="change-input" name="newExperience[description]"
+                                    rows="2"></textarea>
+                            </div>
+                            <br>
+                            <span class="grey-line"></span>
+                            <br>
+                        </div>
 
-                <div class="submit-button">
-                    <button type="submit">Update</button>
-                </div>
+                        <div id="new-experience"></div>
+
+                        <div class="submit-button">
+                            <button type="submit">Update</button>
+                        </div>
             </div>
         </form>
 
@@ -182,175 +201,186 @@
 
         <form class="admin-form" action="/update-certificates" method="post">
             <div class="accordion-toggle">
-                <h2>Certificates<span class="arrow">▼</span> </h2> 
+                <h2>Certificates<span class="arrow">▼</span> </h2>
             </div>
             <div class="accordion-content">
 
                 <% certificates.forEach(function(certi) { %>
 
-                    <input type="hidden" name="updatedCertificate[<%= certi.id %>][id]" value="<%= certi.id %>">
+                    <input class="change-input" type="hidden" name="updatedCertificate[<%= certi.id %>][id]"
+                        value="<%= certi.id %>">
 
                     <div class="changement">
                         <label class="label-for" for="<%= certi.certificates_title %>">Title:</label>
-                        <input type="text" id="certificate_title" name="updatedCertificate[<%= certi.id %>][title]" value="<%= certi.certificates_title %>" required>
+                        <input class="change-input" type="text" id="certificate_title"
+                            name="updatedCertificate[<%= certi.id %>][title]" value="<%= certi.certificates_title %>"
+                            required>
                     </div>
 
                     <div class="changement">
                         <label class="label-for" for="<%= certi.certificates_description %>">Description:</label>
-                        <textarea type="text" id="certificate_description" name="updatedCertificate[<%= certi.id %>][description]" rows="2" value="<%= certi.certificates_description %>" required> <%= certi.certificates_description %> </textarea>
+                        <input type="text" class="change-input" id="certificate_description" name="updatedCertificate[<%= certi.id %>][description]" rows="2" value="<%= certi.certificates_description %>"
+                            required>
                     </div>
 
                     <br>
                     <span class="grey-line"></span>
                     <br>
 
-                <% }); %>
-                
-                <div class="submit-button">
-                    <button type="button" id="add-certificates-button">Add New Certificates</button>
-                </div>
+                    <% }); %>
+
+                        <div class="submit-button">
+                            <button type="button" id="add-certificates-button">Add New Certificates</button>
+                        </div>
 
 
-                <div class="certificates-entry-template">
-                    <div class="changement">
-                        <label class="label-for" for="newCertificate">Title:</label>
-                        <input type="text" id="new_certificate_title" name="newCertificate[title]">
-                    </div>
+                        <div class="certificates-entry-template">
+                            <div class="changement">
+                                <label class="label-for" for="newCertificate">Title:</label>
+                                <input class="change-input" type="text" id="new_certificate_title"
+                                    name="newCertificate[title]">
+                            </div>
 
 
-                    <div class="changement">
-                        <label class="label-for" for="newCertificate">Description:</label>
-                        <textarea id="new_certificate_description" name="newCertificate[description]" rows="2"></textarea>
-                    </div>
-                    <br>
-                    <span class="grey-line"></span>
-                    <br>
-                </div>
-                
-                <div id="new-certificate"></div>
+                            <div class="changement">
+                                <label class="label-for" for="newCertificate">Description:</label>
+                                <input class="change-input" id="new_certificate_description" name="newCertificate[description]">
+                                    
+                            </div>
+                            <br>
+                            <span class="grey-line"></span>
+                            <br>
+                        </div>
 
-                <div class="submit-button">
-                    <button type="submit">Update</button>
-                </div>
+                        <div id="new-certificate"></div>
+
+                        <div class="submit-button">
+                            <button type="submit">Update</button>
+                        </div>
             </div>
         </form>
-        
+
 
         <form class="admin-form" action="/update-interest" method="post">
             <div class="accordion-toggle">
-                <h2>Interest<span class="arrow">▼</span> </h2> 
+                <h2>Interest<span class="arrow">▼</span> </h2>
             </div>
             <div class="accordion-content">
 
                 <% interest.forEach(function(inter) { %>
 
-                    <input type="hidden" name="updatedInterest[<%= inter.id %>][id]" value="<%= inter.id %>">
+                    <input class="change-input" type="hidden" name="updatedInterest[<%= inter.id %>][id]"
+                        value="<%= inter.id %>">
 
                     <div class="changement">
                         <label class="label-for" for="<%= inter.interest_name %>">Name:</label>
-                        <input type="text" id="interest_name" name="updatedInterest[<%= inter.id %>][name]" value="<%= inter.interest_name %>" required>
+                        <input class="change-input" type="text" id="interest_name"
+                            name="updatedInterest[<%= inter.id %>][name]" value="<%= inter.interest_name %>" required>
                     </div>
 
                     <br>
                     <span class="grey-line"></span>
                     <br>
 
-                <% }); %>
-                
-                <div class="submit-button">
-                    <button type="button" id="add-interest-button">Add New Interest</button>
-                </div>
+                    <% }); %>
+
+                        <div class="submit-button">
+                            <button type="button" id="add-interest-button">Add New Interest</button>
+                        </div>
 
 
-                <div class="interest-entry-template">
-                    <div class="changement">
-                        <label class="label-for" for="newInterest">Name:</label>
-                        <input type="text" id="new_interest_name" name="newInterest[name]">
-                    </div>
+                        <div class="interest-entry-template">
+                            <div class="changement">
+                                <label class="label-for" for="newInterest">Name:</label>
+                                <input class="change-input" type="text" id="new_interest_name" name="newInterest[name]">
+                            </div>
 
-                    <br>
-                    <span class="grey-line"></span>
-                    <br>
-                </div>
-                
-                <div id="new-interest"></div>
+                            <br>
+                            <span class="grey-line"></span>
+                            <br>
+                        </div>
 
-                <div class="submit-button">
-                    <button type="submit">Update</button>
-                </div>
+                        <div id="new-interest"></div>
+
+                        <div class="submit-button">
+                            <button type="submit">Update</button>
+                        </div>
             </div>
         </form>
 
 
         <form class="admin-form" action="/update-skills" method="post">
             <div class="accordion-toggle">
-                <h2>Skills<span class="arrow">▼</span> </h2> 
+                <h2>Skills<span class="arrow">▼</span> </h2>
             </div>
             <div class="accordion-content">
 
                 <% skills.forEach(function(skill) { %>
 
-                    <input type="hidden" name="updatedSkills[<%= skill.id %>][id]" value="<%= skill.id %>">
+                    <input class="change-input" type="hidden" name="updatedSkills[<%= skill.id %>][id]"
+                        value="<%= skill.id %>">
 
                     <div class="changement">
                         <label class="label-for" for="<%= skill.skills_name %>">Name:</label>
-                        <input type="text" id="skills_name" name="updatedSkills[<%= skill.id %>][name]" value="<%= skill.skills_name %>" required>
+                        <input class="change-input" type="text" id="skills_name"
+                            name="updatedSkills[<%= skill.id %>][name]" value="<%= skill.skills_name %>" required>
                     </div>
 
                     <div class="changement">
                         <label class="label-for" for="<%= skill.skill_level %>">Level (1-5):</label>
-                        <input type="number" min="1" max="5" step="1" id="skill_level" name="updatedSkills[<%= skill.id %>][level]" value="<%= skill.skill_level %>" required>
+                        <input class="change-input" type="number" min="1" max="5" step="1" id="skill_level"
+                            name="updatedSkills[<%= skill.id %>][level]" value="<%= skill.skill_level %>" required>
                     </div>
 
                     <br>
                     <span class="grey-line"></span>
                     <br>
 
-                <% }); %>
-                
-                <div class="submit-button">
-                    <button type="button" id="add-skills-button">Add New Skills</button>
-                </div>
+                    <% }); %>
+
+                        <div class="submit-button">
+                            <button type="button" id="add-skills-button">Add New Skills</button>
+                        </div>
 
 
-                <div class="skills-entry-template">
-                    <div class="changement">
-                        <label class="label-for" for="newSkill">Name:</label>
-                        <input type="text" id="new_skill_name" name="newSkill[name]">
-                    </div>
+                        <div class="skills-entry-template">
+                            <div class="changement">
+                                <label class="label-for" for="newSkill">Name:</label>
+                                <input class="change-input" type="text" id="new_skill_name" name="newSkill[name]">
+                            </div>
 
-                    <div class="changement">
-                        <label class="label-for" for="newSkill">Level (1-5):</label>
-                        <input type="number" min="1" max="5" step="1" id="new_skill_level" name="newSkill[level]">
-                    </div>
+                            <div class="changement">
+                                <label class="label-for" for="newSkill">Level (1-5):</label>
+                                <input class="change-input" type="number" min="1" max="5" step="1" id="new_skill_level"
+                                    name="newSkill[level]">
+                            </div>
 
-                    <br>
-                    <span class="grey-line"></span>
-                    <br>
-                </div>
-                
-                <div id="new-skills"></div>
+                            <br>
+                            <span class="grey-line"></span>
+                            <br>
+                        </div>
 
-                <div class="submit-button">
-                    <button type="submit">Update</button>
-                </div>
+                        <div id="new-skills"></div>
+
+                        <div class="submit-button">
+                            <button type="submit">Update</button>
+                        </div>
             </div>
         </form>
 
 
         <form class="admin-form" action="/update-expertise" method="post">
             <div class="accordion-toggle">
-                <h2>Expertises<span class="arrow">▼</span> </h2> 
+                <h2>Expertises<span class="arrow">▼</span> </h2>
             </div>
             <div class="accordion-content">
 
                 <% expertise.forEach(function(expert) { %>
 
-                    <input type="hidden" name="updatedExpertise[<%= expert.id %>][id]" value="<%= expert.id %>">
-
+                    <input class="change-input" type="hidden" name="updatedExpertise[<%= expert.id %>][id]" value="<%= expert.id %>">
                     <div class="changement">
                         <label class="label-for" for="<%= expert.expertise_name %>">Name:</label>
-                        <input type="text" id="expertise_name" name="updatedExpertise[<%= expert.id %>][name]" value="<%= expert.expertise_name %>" required>
+                        <input class="change-input" type="text" id="expertise_name" name="updatedExpertise[<%= expert.id %>][name]" value="<%= expert.expertise_name %>" required>
                     </div>
 
                     <br>
@@ -358,23 +388,22 @@
                     <br>
 
                 <% }); %>
-                
+
                 <div class="submit-button">
                     <button type="button" id="add-expertise-button">Add New Expertises</button>
                 </div>
 
-
                 <div class="expertise-entry-template">
                     <div class="changement">
                         <label class="label-for" for="newExpertise">Name:</label>
-                        <input type="text" id="new_expertise_name" name="newExpertise[name]">
+                        <input class="change-input" type="text" id="new_expertise_name"
+                            name="newExpertise[name]">
                     </div>
-
                     <br>
                     <span class="grey-line"></span>
                     <br>
                 </div>
-                
+
                 <div id="new-expertise"></div>
 
                 <div class="submit-button">
@@ -382,7 +411,80 @@
                 </div>
             </div>
         </form>
+
+        <form class="admin-form" action="/update-sass" method="post">
+            <div class="accordion-toggle">
+                <h2>Styles<span class="arrow">▼</span> </h2>
+            </div>
+
+            <div class="accordion-content">
+
+                <div class="changement">
+                    <label class="label-for" for="label-for">Background Color:</label>
+                    <input class="change-style-input" type="color" name="bgColor" value="#ffffff">
+                </div>
+
+                <div class="changement">
+                    <label class="label-for" for="label-for">Texte Color:</label>
+                    <input class="change-style-input" type="color" name="txtColor" value="#ffffff">
+                </div>
+
+                <div class="changement">
+                    <label class="label-for" for="label-for">Special Color:</label>
+                    <input class="change-style-input" type="color" name="specialColor" value="#ffffff">
+                </div>
+
+                <div class="changement">
+                    <label class="label-for" for="label-for">H1 Color:</label>
+                    <input class="change-style-input" type="color" name="h1Color" value="#ffffff">
+                </div>
+
+                <div class="changement">
+                    <label class="label-for" for="label-for">H3 Color:</label>
+                    <input class="change-style-input" type="color" name="h3Color" value="#ffffff">
+                </div>
+
+                <div class="changement">
+                    <label class="label-for" for="label-for">H4 Color:</label>
+                    <input class="change-style-input" type="color" name="h4Color" value="#ffffff">
+                </div>
+
+                <div class="changement">
+                    <label class="label-for" for="label-for">Button Color:</label>
+                    <input class="change-style-input" type="color" name="buttonColor" value="#ffffff">
+                </div>
+
+                <div class="changement">
+                    <label class="label-for" for="label-for">Title Font:</label>
+                    <select id="title-font-family" class="change-font" name="titleFont">
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Lucida">Lucida</option>
+                    </select>
+                </div>
+
+                <div class="changement">
+                    <label class="label-for" for="label-for">Text Font:</label>
+                    <select class="change-font" name="textFont">
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Lucida">Lucida</option>
+                    </select>
+                </div>
+
+                <div class="submit-button">
+                    <button type="submit">Update</button>
+                </div>
+            </div>
+        </form>
     </div>
-    
 </body>
 </html>
