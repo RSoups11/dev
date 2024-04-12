@@ -6,19 +6,29 @@ const db = require('./static/models/database.js');
 const path = require('path');
 const sass = require('sass');
 const fs = require('fs');
+const session = require('express-session');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('static'));
 app.set('view engine', 'ejs');
+
+app.use(session({
+  secret: 'secret_key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false, maxAge: 300000 } // 5 min connexion
+}));
+
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = await db.users.findOne({ where: { email, password } });
   
     if (user) {
+      req.session.isLoggedIn = true; // Set a session variable on successful login
       res.redirect('/admin');
     } else {
-      res.send('Failed to authenticate');
+      res.status(401).send('Authentication failed');
     }
   });
   
@@ -518,8 +528,15 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'login.html'))
 })
 
+function ensureAuthenticated(req, res, next) {
+  if (req.session.isLoggedIn) {
+    next(); // Continue to the next middleware or route handler
+  } else {
+    res.redirect('/login'); // Redirect unauthenticated users to the login page
+  }
+}
 
-app.get('/admin', async (req, res) => {
+app.get('/admin', ensureAuthenticated, async (req, res) => {
   try {
     // Récupération des données de la base de données
     const info = await db.info.findAll();
