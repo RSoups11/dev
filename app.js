@@ -22,6 +22,60 @@ app.post('/login', async (req, res) => {
     }
   });
   
+  app.post('/default-sass', async (req, res) => {
+    const sassFilePath = path.join(__dirname, 'static', 'styles.scss');
+    const cssFilePath = path.join(__dirname, 'static', 'styles.css');
+    try {
+      const templateStyle = await db.styles.findOne({ where: { id: 1 } });
+      const defaultStyles = await db.styles.findOne({ where: { id: 2 } });
+
+      await defaultStyles.update ({
+        bg_color: templateStyle.bg_color,
+        text_color: templateStyle.text_color,
+        special_color: templateStyle.special_color,
+        h1_color: templateStyle.h1_color,
+        h3_color: templateStyle.h3_color,
+        h4_color: templateStyle.h4_color,
+        button_color: templateStyle.button_color,
+        title_font: templateStyle.title_font,
+        text_font: templateStyle.text_font
+      })
+      
+      db.sequelize.sync();
+      
+      const newSass = 
+      `
+      $bg-color: ${defaultStyles.bg_color};
+      $text-color: ${defaultStyles.text_color};
+      $special-color: ${defaultStyles.special_color};
+      $h1-color: ${defaultStyles.h1_color};
+      $h3-color: ${defaultStyles.h3_color};
+      $h4-color: ${defaultStyles.h4_color};
+      $button-color: ${defaultStyles.button_color};
+      $title-font: ${defaultStyles.title_font};
+      $text-font: ${defaultStyles.text_font};
+      `;
+  
+      const sassVariablesPartialPath = path.join(__dirname, 'static', '_dynamicsVariables.scss');
+  
+      // Write the updated styles to the variables partial
+      fs.writeFileSync(sassVariablesPartialPath, newSass);
+  
+      try {
+        const result = sass.compile(sassFilePath, { style: "expanded" });
+        fs.writeFileSync(cssFilePath, result.css);
+        console.log('SASS compiled successfully');
+      } catch (error) {
+        console.error('Failed to compile SASS', error);
+      }
+      res.json({ success: true, message: 'Styles updated successfully.' });
+    } catch (error) {
+    console.error('Error updating info:', error);
+    res.status(500).send('Internal Server Error');
+    }
+  });
+
+
 
 app.post('/update-sass', async (req, res) => {
   const { bgColor, txtColor, specialColor, h1Color, h3Color, h4Color, buttonColor, titleFont, textFont } = req.body;

@@ -543,6 +543,11 @@ ul {
   text-align: center;
 }
 
+.testing {
+  width: 100%;
+  border-bottom: 2px solid #564d4d;
+}
+
 .education-entry-template, .experience-entry-template, .certificates-entry-template, .interest-entry-template, .skills-entry-template, .expertise-entry-template {
   display: none;
-}
+}/*# sourceMappingURL=styles.css.map */

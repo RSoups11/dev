@@ -599,6 +599,11 @@ ul {
   text-align: center;
 }
 
+.testing {
+  width: 100%;
+  border-bottom: $ligne;
+}
+
 .education-entry-template, .experience-entry-template, .certificates-entry-template, .interest-entry-template, .skills-entry-template, .expertise-entry-template {
   display: none;
 }

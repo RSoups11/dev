@@ -169,17 +169,27 @@ document.addEventListener('DOMContentLoaded', function() {
         newExpertiseContainer.appendChild(clone);
       });
 
-  });
-
-  /*
-  document.getElementById('sass-variables-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var formData = new FormData(event.target);
-    var variables = {};
-    formData.forEach(function(value, key) {
-      variables[key] = value;
-    });
-    // Now `variables` contains the updated values from the form
-    updateSassVariables(variables);
-  });
-  */
+      document.getElementById('default').addEventListener('click', function() {
+        fetch('/default-sass', {
+          method: 'POST',
+          headers: {
+            // Include any necessary headers, like Content-Type or CSRF tokens
+          },
+          // If you need to send a body, uncomment the following line:
+          // body: JSON.stringify({ /*...*/ })
+        })
+        .then(response => {
+          if (response.ok) {
+            return response.json(); // or response.json() if the server sends back JSON
+          }
+          throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+          // Handle success. If you want to redirect the user after the operation:
+          window.location.href = '/admin'; // Replace with the path you want to redirect to
+        })
+        .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+        });
+      });
+});
