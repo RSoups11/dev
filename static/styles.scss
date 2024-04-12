@@ -604,6 +604,12 @@ ul {
   border-bottom: $ligne;
 }
 
+.delete-button {
+  background-color: #564d4d !important;
+  width: 10% !important;
+  padding : 5px !important;
+  
+}
 .education-entry-template, .experience-entry-template, .certificates-entry-template, .interest-entry-template, .skills-entry-template, .expertise-entry-template {
   display: none;
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="/admin-script.js"></script>
 
 <body class="administrator">
@@ -75,6 +76,11 @@
 
                 <% education.forEach(function(edu) { %>
 
+                    <!-- Delete button -->
+                    <button class="delete-button" data-id="<%= edu.id %>" aria-label="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+
                     <input class="change-input" type="hidden" name="updatedEducation[<%= edu.id %>][id]"
                         value="<%= edu.id %>">
 
@@ -134,6 +140,10 @@
             <div class="accordion-content">
 
                 <% experience.forEach(function(exp) { %>
+
+                    <button class="delete-button" data-id="<%= exp.id %>" aria-label="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
 
                     <input class="change-input" type="hidden" name="updatedExperience[<%= exp.id %>][id]"
                         value="<%= exp.id %>">
@@ -209,6 +219,10 @@
 
                 <% certificates.forEach(function(certi) { %>
 
+                    <button class="delete-button" data-id="<%= certi.id %>" aria-label="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+
                     <input class="change-input" type="hidden" name="updatedCertificate[<%= certi.id %>][id]"
                         value="<%= certi.id %>">
 
@@ -271,6 +285,10 @@
 
                 <% interest.forEach(function(inter) { %>
 
+                    <button class="delete-button" data-id="<%= inter.id %>" aria-label="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+
                     <input class="change-input" type="hidden" name="updatedInterest[<%= inter.id %>][id]"
                         value="<%= inter.id %>">
 
@@ -318,6 +336,10 @@
             <div class="accordion-content">
 
                 <% skills.forEach(function(skill) { %>
+
+                    <button class="delete-button" data-id="<%= skill.id %>" aria-label="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
 
                     <input class="change-input" type="hidden" name="updatedSkills[<%= skill.id %>][id]"
                         value="<%= skill.id %>">
@@ -378,6 +400,10 @@
             <div class="accordion-content">
 
                 <% expertise.forEach(function(expert) { %>
+
+                    <button class="delete-button" data-id="<%= expert.id %>" aria-label="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
 
                     <input class="change-input" type="hidden" name="updatedExpertise[<%= expert.id %>][id]" value="<%= expert.id %>">
                     <div class="changement">
