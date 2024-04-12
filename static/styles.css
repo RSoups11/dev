@@ -210,6 +210,10 @@ h4 {
   color: #ff0000;
 }
 
+.unchecked {
+  color: white;
+}
+
 .interet {
   color: #ffffff;
   font-family: Helvetica;
@@ -548,7 +552,7 @@ ul {
   border-bottom: 2px solid #564d4d;
 }
 
-.delete-button {
+.delete-edu-button, .delete-exp-button, .delete-certi-button, .delete-inter-button, .delete-skills-button, .delete-expert-button {
   background-color: #564d4d !important;
   width: 10% !important;
   padding: 5px !important;
@@ -556,4 +560,4 @@ ul {
 
 .education-entry-template, .experience-entry-template, .certificates-entry-template, .interest-entry-template, .skills-entry-template, .expertise-entry-template {
   display: none;
-}/*# sourceMappingURL=styles.css.map */
+}

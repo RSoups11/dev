@@ -192,4 +192,154 @@ document.addEventListener('DOMContentLoaded', function() {
           console.error('There has been a problem with your fetch operation:', error);
         });
       });
+
+      document.querySelectorAll('.delete-edu-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const entryId = this.getAttribute('data-id'); // Get the ID
+          fetch(`/delete-education/${entryId}`, { // Replace with your actual delete route
+            method: 'POST',
+            // Additional headers and body as needed
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Delete failed.');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Remove the entry from the DOM or refresh the page
+            console.log('Entry deleted successfully:', data);
+            // For example, to remove the entry's element from the DOM:
+            this.closest('.education').remove();
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        });
+      });
+
+      document.querySelectorAll('.delete-exp-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const entryId = this.getAttribute('data-id'); // Get the ID
+          fetch(`/delete-experience/${entryId}`, { // Replace with your actual delete route
+            method: 'POST',
+            // Additional headers and body as needed
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Delete failed.');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Remove the entry from the DOM or refresh the page
+            console.log('Entry deleted successfully:', data);
+            // For example, to remove the entry's element from the DOM:
+            this.closest('.experience').remove();
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        });
+      });
+
+      document.querySelectorAll('.delete-certi-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const entryId = this.getAttribute('data-id'); // Get the ID
+          fetch(`/delete-certificates/${entryId}`, { // Replace with your actual delete route
+            method: 'POST',
+            // Additional headers and body as needed
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Delete failed.');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Remove the entry from the DOM or refresh the page
+            console.log('Entry deleted successfully:', data);
+            // For example, to remove the entry's element from the DOM:
+            this.closest('.certificate').remove();
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        });
+      });
+
+      document.querySelectorAll('.delete-inter-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const entryId = this.getAttribute('data-id'); // Get the ID
+          fetch(`/delete-interest/${entryId}`, { // Replace with your actual delete route
+            method: 'POST',
+            // Additional headers and body as needed
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Delete failed.');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Remove the entry from the DOM or refresh the page
+            console.log('Entry deleted successfully:', data);
+            // For example, to remove the entry's element from the DOM:
+            this.closest('.interest').remove();
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        });
+      });
+
+      document.querySelectorAll('.delete-skills-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const entryId = this.getAttribute('data-id'); // Get the ID
+          fetch(`/delete-skills/${entryId}`, { // Replace with your actual delete route
+            method: 'POST',
+            // Additional headers and body as needed
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Delete failed.');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Remove the entry from the DOM or refresh the page
+            console.log('Entry deleted successfully:', data);
+            // For example, to remove the entry's element from the DOM:
+            this.closest('.skill').remove();
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        });
+      });
+
+      document.querySelectorAll('.delete-expert-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const entryId = this.getAttribute('data-id'); // Get the ID
+          fetch(`/delete-expertise/${entryId}`, { // Replace with your actual delete route
+            method: 'POST',
+            // Additional headers and body as needed
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Delete failed.');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Remove the entry from the DOM or refresh the page
+            console.log('Entry deleted successfully:', data);
+            // For example, to remove the entry's element from the DOM:
+            this.closest('.expertise').remove();
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        });
+      });
 });

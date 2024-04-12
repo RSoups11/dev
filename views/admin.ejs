@@ -77,25 +77,28 @@
                 <% education.forEach(function(edu) { %>
 
                     <!-- Delete button -->
-                    <button class="delete-button" data-id="<%= edu.id %>" aria-label="Delete">
+                    <button class="delete-edu-button" data-id="<%= edu.id %>" aria-label="Delete">
                         <i class="fas fa-trash"></i>
                     </button>
 
                     <input class="change-input" type="hidden" name="updatedEducation[<%= edu.id %>][id]"
                         value="<%= edu.id %>">
-
-                    <div class="changement">
-                        <label class="label-for" for="<%= edu.education_title %>">Title:</label>
-                        <input class="change-input" type="text" id="education_title"
-                            name="updatedEducation[<%= edu.id %>][title]" value="<%= edu.education_title %>" required>
+                    
+                    <div class="education">
+                        <div class="changement">
+                            <label class="label-for" for="<%= edu.education_title %>">Title:</label>
+                            <input class="change-input" type="text" id="education_title"
+                                name="updatedEducation[<%= edu.id %>][title]" value="<%= edu.education_title %>" required>
+                        </div>
+    
+                        <div class="changement">
+                            <label class="label-for" for="<%= edu.education_description %>">Description:</label>
+                            <textarea type="text" class="change-input" id="education_description" name="updatedEducation[<%= edu.id %>][description]" rows="2" value="<%= edu.education_description %>" required>
+                                 <%= edu.education_description %> 
+                            </textarea>
+                        </div>
                     </div>
-
-                    <div class="changement">
-                        <label class="label-for" for="<%= edu.education_description %>">Description:</label>
-                        <textarea type="text" class="change-input" id="education_description" name="updatedEducation[<%= edu.id %>][description]" rows="2" value="<%= edu.education_description %>" required>
-                             <%= edu.education_description %> 
-                        </textarea>
-                    </div>
+                    
 
                     <br>
                     <span class="grey-line"></span>
@@ -141,31 +144,34 @@
 
                 <% experience.forEach(function(exp) { %>
 
-                    <button class="delete-button" data-id="<%= exp.id %>" aria-label="Delete">
+                    <button class="delete-exp-button" data-id="<%= exp.id %>" aria-label="Delete">
                         <i class="fas fa-trash"></i>
                     </button>
-
-                    <input class="change-input" type="hidden" name="updatedExperience[<%= exp.id %>][id]"
+                    
+                    <div class="experience">
+                        <input class="change-input" type="hidden" name="updatedExperience[<%= exp.id %>][id]"
                         value="<%= exp.id %>">
 
-                    <div class="changement">
-                        <label class="label-for" for="<%= exp.title %>">Title:</label>
-                        <input class="change-input" type="text" id="experience_title"
-                            name="updatedExperience[<%= exp.id %>][title]" value="<%= exp.title %>" required>
-                    </div>
+                        <div class="changement">
+                            <label class="label-for" for="<%= exp.title %>">Title:</label>
+                            <input class="change-input" type="text" id="experience_title"
+                                name="updatedExperience[<%= exp.id %>][title]" value="<%= exp.title %>" required>
+                        </div>
 
-                    <div class="changement">
-                        <label class="label-for" for="<%= exp.location %>">Location:</label>
-                        <input type="text" class="change-input" id="experience_location" name="updatedExperience[<%= exp.id %>][location]"
-                            value="<%= exp.location %>" required>
-                    </div>
+                        <div class="changement">
+                            <label class="label-for" for="<%= exp.location %>">Location:</label>
+                            <input type="text" class="change-input" id="experience_location" name="updatedExperience[<%= exp.id %>][location]"
+                                value="<%= exp.location %>" required>
+                        </div>
 
-                    <div class="changement">
-                        <label class="label-for" for="<%= exp.description %>">Description:</label>
-                        <textarea type="text" class="change-input" id="experience_description"
-                            name="updatedExperience[<%= exp.id %>][description]" rows="2" value="<%= exp.description %>"
-                            required> <%= exp.description %> </textarea>
+                        <div class="changement">
+                            <label class="label-for" for="<%= exp.description %>">Description:</label>
+                            <textarea type="text" class="change-input" id="experience_description"
+                                name="updatedExperience[<%= exp.id %>][description]" rows="2" value="<%= exp.description %>"
+                                required> <%= exp.description %> </textarea>
+                        </div>
                     </div>
+                    
 
                     <br>
                     <span class="grey-line"></span>
@@ -219,25 +225,28 @@
 
                 <% certificates.forEach(function(certi) { %>
 
-                    <button class="delete-button" data-id="<%= certi.id %>" aria-label="Delete">
+                    <button class="delete-certi-button" data-id="<%= certi.id %>" aria-label="Delete">
                         <i class="fas fa-trash"></i>
                     </button>
 
-                    <input class="change-input" type="hidden" name="updatedCertificate[<%= certi.id %>][id]"
+                    <div class="certificate">
+                        <input class="change-input" type="hidden" name="updatedCertificate[<%= certi.id %>][id]"
                         value="<%= certi.id %>">
 
-                    <div class="changement">
-                        <label class="label-for" for="<%= certi.certificates_title %>">Title:</label>
-                        <input class="change-input" type="text" id="certificate_title"
-                            name="updatedCertificate[<%= certi.id %>][title]" value="<%= certi.certificates_title %>"
-                            required>
-                    </div>
+                        <div class="changement">
+                            <label class="label-for" for="<%= certi.certificates_title %>">Title:</label>
+                            <input class="change-input" type="text" id="certificate_title"
+                                name="updatedCertificate[<%= certi.id %>][title]" value="<%= certi.certificates_title %>"
+                                required>
+                        </div>
 
-                    <div class="changement">
-                        <label class="label-for" for="<%= certi.certificates_description %>">Description:</label>
-                        <input type="text" class="change-input" id="certificate_description" name="updatedCertificate[<%= certi.id %>][description]" rows="2" value="<%= certi.certificates_description %>"
-                            required>
+                        <div class="changement">
+                            <label class="label-for" for="<%= certi.certificates_description %>">Description:</label>
+                            <input type="text" class="change-input" id="certificate_description" name="updatedCertificate[<%= certi.id %>][description]" rows="2" value="<%= certi.certificates_description %>"
+                                required>
+                        </div>
                     </div>
+                    
 
                     <br>
                     <span class="grey-line"></span>
@@ -285,18 +294,21 @@
 
                 <% interest.forEach(function(inter) { %>
 
-                    <button class="delete-button" data-id="<%= inter.id %>" aria-label="Delete">
+                    <button class="delete-inter-button" data-id="<%= inter.id %>" aria-label="Delete">
                         <i class="fas fa-trash"></i>
                     </button>
 
-                    <input class="change-input" type="hidden" name="updatedInterest[<%= inter.id %>][id]"
+                    <div class="interest">
+                        <input class="change-input" type="hidden" name="updatedInterest[<%= inter.id %>][id]"
                         value="<%= inter.id %>">
 
-                    <div class="changement">
-                        <label class="label-for" for="<%= inter.interest_name %>">Name:</label>
-                        <input class="change-input" type="text" id="interest_name"
-                            name="updatedInterest[<%= inter.id %>][name]" value="<%= inter.interest_name %>" required>
+                        <div class="changement">
+                            <label class="label-for" for="<%= inter.interest_name %>">Name:</label>
+                            <input class="change-input" type="text" id="interest_name"
+                                name="updatedInterest[<%= inter.id %>][name]" value="<%= inter.interest_name %>" required>
+                        </div>
                     </div>
+                    
 
                     <br>
                     <span class="grey-line"></span>
@@ -337,23 +349,25 @@
 
                 <% skills.forEach(function(skill) { %>
 
-                    <button class="delete-button" data-id="<%= skill.id %>" aria-label="Delete">
+                    <button class="delete-skills-button" data-id="<%= skill.id %>" aria-label="Delete">
                         <i class="fas fa-trash"></i>
                     </button>
 
-                    <input class="change-input" type="hidden" name="updatedSkills[<%= skill.id %>][id]"
+                    <div class="skill">
+                        <input class="change-input" type="hidden" name="updatedSkills[<%= skill.id %>][id]"
                         value="<%= skill.id %>">
 
-                    <div class="changement">
-                        <label class="label-for" for="<%= skill.skills_name %>">Name:</label>
-                        <input class="change-input" type="text" id="skills_name"
-                            name="updatedSkills[<%= skill.id %>][name]" value="<%= skill.skills_name %>" required>
-                    </div>
+                        <div class="changement">
+                            <label class="label-for" for="<%= skill.skills_name %>">Name:</label>
+                            <input class="change-input" type="text" id="skills_name"
+                                name="updatedSkills[<%= skill.id %>][name]" value="<%= skill.skills_name %>" required>
+                        </div>
 
-                    <div class="changement">
-                        <label class="label-for" for="<%= skill.skill_level %>">Level (1-5):</label>
-                        <input class="change-input" type="number" min="1" max="5" step="1" id="skill_level"
-                            name="updatedSkills[<%= skill.id %>][level]" value="<%= skill.skill_level %>" required>
+                        <div class="changement">
+                            <label class="label-for" for="<%= skill.skill_level %>">Level (1-5):</label>
+                            <input class="change-input" type="number" min="1" max="5" step="1" id="skill_level"
+                                name="updatedSkills[<%= skill.id %>][level]" value="<%= skill.skill_level %>" required>
+                        </div>
                     </div>
 
                     <br>
@@ -401,15 +415,19 @@
 
                 <% expertise.forEach(function(expert) { %>
 
-                    <button class="delete-button" data-id="<%= expert.id %>" aria-label="Delete">
+                    <button class="delete-expert-button" data-id="<%= expert.id %>" aria-label="Delete">
                         <i class="fas fa-trash"></i>
                     </button>
 
-                    <input class="change-input" type="hidden" name="updatedExpertise[<%= expert.id %>][id]" value="<%= expert.id %>">
-                    <div class="changement">
-                        <label class="label-for" for="<%= expert.expertise_name %>">Name:</label>
-                        <input class="change-input" type="text" id="expertise_name" name="updatedExpertise[<%= expert.id %>][name]" value="<%= expert.expertise_name %>" required>
+                    <div class="expertise">
+                        <input class="change-input" type="hidden" name="updatedExpertise[<%= expert.id %>][id]" value="<%= expert.id %>">
+
+                        <div class="changement">
+                            <label class="label-for" for="<%= expert.expertise_name %>">Name:</label>
+                            <input class="change-input" type="text" id="expertise_name" name="updatedExpertise[<%= expert.id %>][name]" value="<%= expert.expertise_name %>" required>
+                        </div>
                     </div>
+                    
 
                     <br>
                     <span class="grey-line"></span>

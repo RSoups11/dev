@@ -42,7 +42,7 @@ app.post('/login', async (req, res) => {
       })
       
       db.sequelize.sync();
-      
+
       const newSass = 
       `
       $bg-color: ${defaultStyles.bg_color};
@@ -198,6 +198,28 @@ app.post('/update-education', async (req, res) => {
   }
 });
 
+app.post('/delete-education/:id', async (req, res) => {
+  const { id } = req.params; // Get the ID from the URL
+  try {
+    // Use Sequelize to delete the entry
+    const result = await db.education.destroy({
+      where: { id: id }
+    });
+
+    if (result === 0) {
+      // No rows deleted
+      res.status(404).json({ message: 'Entry not found.' });
+      return;
+    }
+
+    // Respond with a success message
+    res.json({ message: 'Entry deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting entry:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
 
 app.post('/update-experience', async (req, res) => {
   const { updatedExperience, newExperience } = req.body;
@@ -231,6 +253,28 @@ app.post('/update-experience', async (req, res) => {
   }
 });
 
+app.post('/delete-experience/:id', async (req, res) => {
+  const { id } = req.params; // Get the ID from the URL
+  try {
+    // Use Sequelize to delete the entry
+    const result = await db.experience.destroy({
+      where: { id: id }
+    });
+
+    if (result === 0) {
+      // No rows deleted
+      res.status(404).json({ message: 'Entry not found.' });
+      return;
+    }
+
+    // Respond with a success message
+    res.json({ message: 'Entry deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting entry:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
 app.post('/update-certificates', async (req, res) => {
   const { updatedCertificate, newCertificate } = req.body;
   console.log(req.body);
@@ -260,6 +304,28 @@ app.post('/update-certificates', async (req, res) => {
   } catch (error) {
     console.error('Error updating experience:', error);
     res.status(500).send('Internal Server Error');
+  }
+});
+
+app.post('/delete-certificates/:id', async (req, res) => {
+  const { id } = req.params; // Get the ID from the URL
+  try {
+    // Use Sequelize to delete the entry
+    const result = await db.certificates.destroy({
+      where: { id: id }
+    });
+
+    if (result === 0) {
+      // No rows deleted
+      res.status(404).json({ message: 'Entry not found.' });
+      return;
+    }
+
+    // Respond with a success message
+    res.json({ message: 'Entry deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting entry:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
   }
 });
 
@@ -296,6 +362,28 @@ app.post('/update-interest', async (req, res) => {
   }
 });
 
+app.post('/delete-interest/:id', async (req, res) => {
+  const { id } = req.params; // Get the ID from the URL
+  try {
+    // Use Sequelize to delete the entry
+    const result = await db.interest.destroy({
+      where: { id: id }
+    });
+
+    if (result === 0) {
+      // No rows deleted
+      res.status(404).json({ message: 'Entry not found.' });
+      return;
+    }
+
+    // Respond with a success message
+    res.json({ message: 'Entry deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting entry:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
 
 
 app.post('/update-skills', async (req, res) => {
@@ -329,6 +417,28 @@ app.post('/update-skills', async (req, res) => {
   }
 });
 
+app.post('/delete-skills/:id', async (req, res) => {
+  const { id } = req.params; // Get the ID from the URL
+  try {
+    // Use Sequelize to delete the entry
+    const result = await db.skills.destroy({
+      where: { id: id }
+    });
+
+    if (result === 0) {
+      // No rows deleted
+      res.status(404).json({ message: 'Entry not found.' });
+      return;
+    }
+
+    // Respond with a success message
+    res.json({ message: 'Entry deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting entry:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
 app.post('/update-expertise', async (req, res) => {
   const { updatedExpertise, newExpertise } = req.body;
   console.log(req.body);
@@ -358,6 +468,28 @@ app.post('/update-expertise', async (req, res) => {
   } catch (error) {
     console.error('Error updating expertise:', error);
     res.status(500).send('Internal Server Error');
+  }
+});
+
+app.post('/delete-expertise/:id', async (req, res) => {
+  const { id } = req.params; // Get the ID from the URL
+  try {
+    // Use Sequelize to delete the entry
+    const result = await db.expertise.destroy({
+      where: { id: id }
+    });
+
+    if (result === 0) {
+      // No rows deleted
+      res.status(404).json({ message: 'Entry not found.' });
+      return;
+    }
+
+    // Respond with a success message
+    res.json({ message: 'Entry deleted successfully.' });
+  } catch (error) {
+    console.error('Error deleting entry:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
   }
 });
 
