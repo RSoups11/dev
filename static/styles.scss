@@ -205,6 +205,7 @@ body {
   color : $text-color;
   font-family: $text-font;
   font-size: $text-size;
+  white-space: pre-wrap;
 }
 
 // Parametre reutilisable pour les titres
@@ -530,6 +531,7 @@ ul {
   background-color : transparent;
   border: 2px solid #564d4d;
   color: #ffffff;
+  white-space: pre-wrap;
 }
 
 .change-input {

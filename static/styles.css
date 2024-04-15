@@ -169,6 +169,7 @@ body {
   color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
+  white-space: pre-wrap;
   margin-top: 0;
   margin-bottom: 5%;
 }
@@ -177,6 +178,7 @@ body {
   color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
+  white-space: pre-wrap;
   margin-top: 0;
 }
 
@@ -218,6 +220,7 @@ h4 {
   color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
+  white-space: pre-wrap;
   text-align: right;
   margin-bottom: 4%;
   margin-top: 0;
@@ -228,6 +231,7 @@ h4 {
   color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
+  white-space: pre-wrap;
   text-align: left;
   margin-bottom: 4%;
   margin-top: 0;
@@ -238,6 +242,7 @@ h4 {
   color: #ffffff;
   font-family: Helvetica;
   font-size: 14px;
+  white-space: pre-wrap;
   float: right;
 }
 
@@ -469,6 +474,7 @@ ul {
   background-color: transparent;
   border: 2px solid #564d4d;
   color: #ffffff;
+  white-space: pre-wrap;
 }
 
 .change-input {
@@ -560,4 +566,4 @@ ul {
 
 .education-entry-template, .experience-entry-template, .certificates-entry-template, .interest-entry-template, .skills-entry-template, .expertise-entry-template {
   display: none;
-}
+}/*# sourceMappingURL=styles.css.map */
